@@ -55,7 +55,7 @@ const toggleSidebar = () => {
 <style lang="scss">
 .main {
   width: calc(100% - 220px);
-  margin-left: 240px;
+  margin-left: 220px;
   @media (max-width: 768px) {
     margin-left: 0;
     width: 100%;

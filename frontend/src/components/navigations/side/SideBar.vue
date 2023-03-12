@@ -64,9 +64,16 @@
 </template>
 
 <script setup lang="ts">
+import { useRoute } from "vue-router";
+import { watch } from "vue";
+
 const closeSidebar = () => {
   document.querySelector<HTMLElement>("#sidebar")!.classList.remove("open");
 };
+const route = useRoute();
+watch(route, () => {
+  document.querySelector<HTMLElement>("#sidebar")!.classList.remove("open");
+});
 </script>
 
 <style scoped lang="scss">
