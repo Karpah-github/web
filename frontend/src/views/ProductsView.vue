@@ -31,7 +31,7 @@
             >12</span
           >
         </span>
-        <span class="uppercase border-b border-[#828282] py-3 px-8">
+        <span class="uppercase border-b border-[#828282] py-3 px-2 md:px-8">
           Active
           <!-- <span class="w-4 h-4 rounded-full bg-[#828282] text-white">12</span> -->
         </span>
@@ -97,7 +97,7 @@
       </div>
       <div
         v-if="view === 'grid'"
-        class="grid grid-cols-1 md:grid-cols-3 gap-5 w-full"
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 w-full"
       >
         <ProductCard
           v-for="(product, index) in productList"
@@ -117,7 +117,7 @@ import ProductCard from "@/components/products/ProductCard.vue";
 import { ref } from "vue";
 import ProductRow from "../components/products/ProductRow.vue";
 import { productList } from "../composables/products/products";
-const view = ref("list");
+const view = ref("grid");
 const changeView = (v: string) => {
   view.value = v;
 };
