@@ -7,7 +7,7 @@
       <div class="flex justify-between items-center">
         <div class="">
           <div
-            class="bg-[#ECECEC] flex gap-2 items-center rounded-xl px-2 py-1"
+            class="bg-[#ECECEC] flex gap-2 items-center rounded-full px-2 py-1"
           >
             <div
               class="w-2 h-2 rounded-full"

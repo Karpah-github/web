@@ -10,13 +10,13 @@
             @click="changeView('grid')"
             :class="[{ 'bg-white': view === 'grid' }, 'p-1']"
           >
-            <img class="w-full" src="../assets/icons/grid.svg" alt="" />
+            <img class="w-full" src="../../assets/icons/grid.svg" alt="" />
           </button>
           <button
             @click="changeView('list')"
             :class="[{ 'bg-white': view === 'list' }]"
           >
-            <img class="w-full" src="../assets/icons/menu.svg" alt="" />
+            <img class="w-full" src="../../assets/icons/menu.svg" alt="" />
           </button>
         </div>
         <div class="btn-primary py-2 px-5">Add New Product</div>
@@ -24,49 +24,68 @@
     </div>
     <div class="flex justify-between items-center">
       <div class="flex justify-between font-light text-sm text-[#828282]">
-        <span class="uppercase active border-b border-[#828282] py-3 pl-2 pr-4">
+        <span
+          class="uppercase flex active border-b border-[#828282] py-3 pl-2 pr-4"
+        >
           All
-          <span
-            class="w-5 h-5 p-1 ml-1 num text-xs rounded-full bg-[#828282] text-white"
-            >12</span
+          <div
+            class="w-5 h-5 ml-1 flex items-center justify-center num text-xs rounded-full bg-[#828282] text-white"
           >
+            12
+          </div>
         </span>
         <span class="uppercase border-b border-[#828282] py-3 px-2 md:px-8">
           Active
           <!-- <span class="w-4 h-4 rounded-full bg-[#828282] text-white">12</span> -->
         </span>
-        <span class="uppercase border-b border-[#828282] py-3 pl-4">
+        <span class="uppercase flex border-b border-[#828282] py-3 pl-4">
           Draft
           <span
-            class="w-5 h-5 p-1 ml-1 num text-xs rounded-full bg-[#828282] text-white"
+            class="w-5 h-5 ml-1 flex items-center justify-center num text-xs rounded-full bg-[#828282] text-white"
             >12</span
           >
         </span>
       </div>
       <button class="btn-secondary py-1 px-2 md:hidden">
-        <img class="w-full" src="../assets/icons/more.svg" alt="" />
+        <img class="w-full" src="../../assets/icons/more.svg" alt="" />
       </button>
       <div
         class="hidden text-[#828282] font-light md:flex gap-5 justify-between"
       >
         <span class="flex items-center gap-1">
           <div class="w-4">
-            <img class="w-full" src="../assets/icons/filter.svg" alt="" />
+            <img class="w-full" src="../../assets/icons/filter.svg" alt="" />
           </div>
           <p>Filter</p>
         </span>
         <span class="flex items-center gap-1">
           <div class="w-6">
-            <img class="w-full" src="../assets/icons/sort.svg" alt="" />
+            <img class="w-full" src="../../assets/icons/sort.svg" alt="" />
           </div>
           <p>Sort</p>
         </span>
         <span class="flex items-center gap-1">
           <div class="w-4">
-            <img class="w-full" src="../assets/icons/search.svg" alt="" />
+            <img class="w-full" src="../../assets/icons/search.svg" alt="" />
           </div>
           <p>Search</p>
         </span>
+      </div>
+    </div>
+    <div v-if="!productList" class="empty-page h-screen my-4">
+      <div class="text-center">
+        <div class="w-32 mx-auto mb-6">
+          <img
+            class="w-full"
+            src="../../assets/icons/empty-product-page-icon.svg"
+            alt=""
+          />
+        </div>
+        <h5 class="font-semibold text-2xl mb-1">No product listed</h5>
+        <p class="text-md text-[#828282] font-light lg:w-3/4 mx-auto">
+          To start selling, click the 'Add New Product' button and start
+          creating your first product listing
+        </p>
       </div>
     </div>
     <div class="product-table py-4">
@@ -115,8 +134,8 @@
 <script setup lang="ts">
 import ProductCard from "@/components/products/ProductCard.vue";
 import { ref } from "vue";
-import ProductRow from "../components/products/ProductRow.vue";
-import { productList } from "../composables/products/products";
+import ProductRow from "../../components/products/ProductRow.vue";
+import { productList } from "../../composables/products/products";
 const view = ref("grid");
 const changeView = (v: string) => {
   view.value = v;
