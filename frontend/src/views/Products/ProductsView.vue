@@ -19,7 +19,9 @@
             <img class="w-full" src="../../assets/icons/menu.svg" alt="" />
           </button>
         </div>
-        <div class="btn-primary py-2 px-5">Add New Product</div>
+        <router-link to="/add-product" class="btn-primary py-2 px-5"
+          >Add New Product</router-link
+        >
       </div>
     </div>
     <div class="flex justify-between items-center">
