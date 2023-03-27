@@ -1,6 +1,6 @@
 <template>
   <div class="md:flex gap-20">
-    <h5 class="header5 pt-4 md:w-3/12">Pricing</h5>
+    <h5 class="header5 pt-4">Pricing</h5>
     <form action="" class="md:w-6/12 pt-4">
       <div class="form-input">
         <span class="flex gap-1">
