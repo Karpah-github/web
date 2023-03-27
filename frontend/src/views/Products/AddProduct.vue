@@ -8,8 +8,9 @@
       </button>
       <h5 class="header5">Add product</h5>
     </div>
-    <ProductUploadNav />
+    <ProductUploadNav :page="page" @update:page="updatePage" />
     <ProductDetailsForm
+      v-show="page === 'product-details'"
       v-model:product-name="productInfo.name"
       v-model:product-description="productInfo.description"
       v-model:product-category="productInfo.category"
@@ -28,6 +29,15 @@
       :productHighlights="productInfo.highlights"
       :add-highlight-title="addHighlightTitle"
       :add-highlight-details="addHighlightDetails"
+      :page="page"
+      @update:page="updatePage"
+    />
+    <ProductPricingForm
+      v-show="page === 'pricing'"
+      v-model:product-price="productInfo.price"
+      v-model:product-compare-price="productInfo.comparePrice"
+      :page="page"
+      @update:page="updatePage"
     />
   </div>
 </template>
@@ -39,8 +49,13 @@ import { ref } from "vue";
 import type { Ref } from "vue";
 import { useRouter } from "vue-router";
 import ProductDetailsForm from "@/components/products/AddProducts/ProductDetailsForm.vue";
+import ProductPricingForm from "@/components/products/AddProducts/ProductPricingForm.vue";
 
 const router = useRouter();
+const page = ref("product-details");
+const updatePage = (view: string) => {
+  page.value = view;
+};
 
 const productInfo: Ref<ProductInfo> = ref({
   name: "",
@@ -67,10 +82,8 @@ const addTag = () => {
 const removeTag = (index: number) => {
   productInfo.value.tags.splice(index, 1);
 };
-let nextId = 0;
 const addHighlight = () => {
   const highlight = ref({
-    id: nextId++,
     title: "",
     details: "",
   });

@@ -1,9 +1,13 @@
 <script setup lang="ts">
 import { ref } from "vue";
-
-const screen = ref("upload-image");
+// eslint-disable-next-line no-undef
+const props = defineProps({ page: String });
+// eslint-disable-next-line no-undef
+const emit = defineEmits(["update:page"]);
+const screen = ref(props.page);
 const changeUploadScreen = (view: string) => {
   screen.value = view;
+  emit("update:page", view);
 };
 </script>
 
