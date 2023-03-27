@@ -39,6 +39,14 @@
       :page="page"
       @update:page="updatePage"
     />
+    <ProductShippingForm
+      v-show="page === 'shipping'"
+      v-model:product-height="productInfo.height"
+      v-model:product-weight="productInfo.weight"
+      v-model:product-delivery-period="productInfo.deliveryPeriod"
+      :page="page"
+      @update:page="updatePage"
+    />
   </div>
 </template>
 
@@ -50,6 +58,7 @@ import type { Ref } from "vue";
 import { useRouter } from "vue-router";
 import ProductDetailsForm from "@/components/products/AddProducts/ProductDetailsForm.vue";
 import ProductPricingForm from "@/components/products/AddProducts/ProductPricingForm.vue";
+import ProductShippingForm from "@/components/products/AddProducts/ProductShippingForm.vue";
 
 const router = useRouter();
 const page = ref("product-details");
@@ -73,6 +82,9 @@ const productInfo: Ref<ProductInfo> = ref({
   highlights: [],
   price: 0,
   comparePrice: 0,
+  height: 0,
+  weight: 0,
+  deliveryPeriod: "",
 });
 const tag = ref("");
 const addTag = () => {

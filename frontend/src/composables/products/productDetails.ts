@@ -20,4 +20,7 @@ export type ProductInfo = {
   highlights: Array<any>;
   price: number;
   comparePrice: number;
+  weight: number;
+  height: number;
+  deliveryPeriod: string;
 };
