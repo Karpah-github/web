@@ -1,6 +1,6 @@
 <template>
   <div class="md:flex gap-20">
-    <h5 class="header5">Product Details</h5>
+    <h5 class="header5 pt-4">Product Details</h5>
     <form action="" class="md:w-6/12 pt-4">
       <div class="form-input">
         <span class="flex gap-1">
@@ -280,10 +280,14 @@
         <img class="svg-primary" src="../../../assets/icons/add.svg" alt="" />
         <span class="text-lg">Add highlight</span>
       </button>
-      <!-- <div class="flex justify-end gap-4">
-        <button class="btn-secondary px-4 py-3 uppercase">back</button>
-        <button class="btn-primary px-4 py-2 uppercase">Save & Continue</button>
-      </div> -->
+      <div class="flex justify-end gap-4">
+        <button type="button" class="btn-secondary px-4 py-3 uppercase">
+          back
+        </button>
+        <button type="button" class="btn-primary px-4 py-2 uppercase">
+          Save & Continue
+        </button>
+      </div>
     </form>
   </div>
 </template>
@@ -304,6 +308,7 @@ defineProps({
   productBust: Number,
   productHighlights: Array,
   addTag: Function,
+  page: String,
   removeTag: {
     type: Function,
     required: true,
@@ -338,6 +343,7 @@ defineEmits([
   "update:productWaist",
   "update:productproductHip",
   "update:productproductBust",
+  "update:page",
 ]);
 
 const showMeasurement = ref(false);
