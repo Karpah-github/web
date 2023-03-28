@@ -47,6 +47,13 @@
       :page="page"
       @update:page="updatePage"
     />
+    <ProductImageUpload
+      v-show="page === 'upload-image'"
+      v-model:product-images="productInfo"
+      v-model:product-image="productInfo.images"
+      :page="page"
+      @update:page="updatePage"
+    />
   </div>
 </template>
 
@@ -59,9 +66,10 @@ import { useRouter } from "vue-router";
 import ProductDetailsForm from "@/components/products/AddProducts/ProductDetailsForm.vue";
 import ProductPricingForm from "@/components/products/AddProducts/ProductPricingForm.vue";
 import ProductShippingForm from "@/components/products/AddProducts/ProductShippingForm.vue";
+import ProductImageUpload from "@/components/products/AddProducts/ProductImageUpload.vue";
 
 const router = useRouter();
-const page = ref("product-details");
+const page = ref("upload-image");
 const updatePage = (view: string) => {
   page.value = view;
 };
@@ -85,6 +93,7 @@ const productInfo: Ref<ProductInfo> = ref({
   height: 0,
   weight: 0,
   deliveryPeriod: "",
+  images: [],
 });
 const tag = ref("");
 const addTag = () => {

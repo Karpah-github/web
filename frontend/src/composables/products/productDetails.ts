@@ -23,4 +23,5 @@ export type ProductInfo = {
   weight: number;
   height: number;
   deliveryPeriod: string;
+  images: any;
 };
