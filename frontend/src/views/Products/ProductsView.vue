@@ -95,7 +95,7 @@
         <table class="table-auto w-full">
           <thead class="table__header">
             <tr
-              class="table__row uppercase text-left text-[#333333] bg-[#F2F2F2]"
+              class="product_table__row uppercase text-left text-[#333333] bg-[#F2F2F2]"
             >
               <th class="font-medium pl-2 text-sm py-3">Product</th>
               <th class="font-medium text-sm py-2 text-left">Upload Date</th>
@@ -159,7 +159,7 @@ const changeView = (v: string) => {
   font-size: 0.75rem;
 }
 
-tbody > .table__row {
+tbody > .product_table__row {
   border-bottom: 1px solid #dfdfdf;
 }
 
