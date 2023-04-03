@@ -1,7 +1,13 @@
 <script lang="ts" setup>
 import modal from "./index.vue";
 import { defineProps } from "vue";
-const props = defineProps(["open", "close", "showActionsModal", "id"]);
+const props = defineProps([
+  "open",
+  "close",
+  "showActionsModal",
+  "showOrderDetails",
+  "id",
+]);
 </script>
 <template>
   <modal :open="props.open" :close="props.close">
@@ -10,13 +16,16 @@ const props = defineProps(["open", "close", "showActionsModal", "id"]);
       :class="showActionsModal === id ? 'show' : ''"
     >
       <ul class="flex flex-col gap-2 font-light pt-1">
-        <li class="hover:bg-[#F2F2F2] px-4 py-2 text-[#333333] text-md">
+        <li
+          @click="props.showOrderDetails(id)"
+          class="hover:bg-[#F2F2F2] px-4 py-1 text-[#333333] text-md"
+        >
           View Order
         </li>
         <li class="hover:bg-[#F2F2F2] px-4 py-1 text-[#333333] text-md">
           Message Buyer
         </li>
-        <li class="hover:bg-[#F2F2F2] px-4 py-2 text-[#E72B3B] text-md">
+        <li class="hover:bg-[#F2F2F2] px-4 py-1 text-[#E72B3B] text-md">
           Report
         </li>
       </ul>
@@ -36,7 +45,7 @@ const props = defineProps(["open", "close", "showActionsModal", "id"]);
   top: 40px;
   bottom: 0;
   right: 10px;
-  z-index: 99999;
+  z-index: 3;
   cursor: pointer;
   &.show {
     display: block;
@@ -51,6 +60,6 @@ const props = defineProps(["open", "close", "showActionsModal", "id"]);
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.07);
-  z-index: 9999;
+  z-index: 2;
 }
 </style>

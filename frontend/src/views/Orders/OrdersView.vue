@@ -48,7 +48,11 @@
           <span class="w-5">
             <img class="w-full" src="../../assets/icons/search.svg" alt="" />
           </span>
-          <input type="search" placeholder="Search here" />
+          <input
+            type="search"
+            v-model="searchedOrder"
+            placeholder="Search here"
+          />
         </div>
         <div class="flex gap-4 items-center">
           <span class="flex items-center gap-1">
@@ -86,7 +90,7 @@
           <tbody>
             <tr
               class="table__row text-[#333333] hover:bg-[#F2F2F2]"
-              v-for="(order, index) in orderList"
+              v-for="(order, index) in filteredOrders"
               :key="index"
             >
               <td class="table__box px-2 py-8">
@@ -119,9 +123,8 @@
                   <div
                     class="w-2 h-2 rounded-full"
                     :class="[
-                      { 'bg-[#3BB75E]': order.status === 'active' },
                       { 'bg-[#FA9E33]': order.status === 'processing' },
-                      { 'bg-[#2A8243]': order.status === 'delivered' },
+                      { 'bg-[#3BB75E]': order.status === 'delivered' },
                       { 'bg-[#E72B3B]': order.status === 'cancelled' },
                     ]"
                   ></div>
@@ -152,12 +155,19 @@
                     <OrderActions
                       :open="openModal"
                       :close="showActions"
+                      :show-order-details="showOrderDetails"
                       :id="order.orderId"
                       :show-actions-modal="showActionsModal"
                     />
                   </div>
                 </div>
               </td>
+              <OrderDetails
+                :open="openOrderModal"
+                :close="showOrderDetails"
+                :order="order"
+                :show-actions-modal="showActionsModal"
+              />
             </tr>
           </tbody>
         </table>
@@ -167,9 +177,10 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import { orderList } from "../../composables/orders/orders";
 import OrderActions from "@/components/modals/OrderActions.vue";
+import OrderDetails from "@/components/modals/OrderDetails.vue";
 let openModal = ref(false);
 const showActionsModal = ref("");
 const showActions = (x: string) => {
@@ -179,6 +190,27 @@ const showActions = (x: string) => {
   } else {
     showActionsModal.value = x;
   }
+};
+const searchedOrder = ref("");
+const filteredOrders = computed(() => {
+  const value =
+    searchedOrder.value.charAt(0).toUpperCase() + searchedOrder.value.slice(1);
+  return orderList.filter(function (order) {
+    return (
+      order.customerName.indexOf(value) > -1 ||
+      order.orderId.indexOf(value) > -1 ||
+      order.customerEmail.indexOf(value) > -1 ||
+      order.deliveryDate.indexOf(value) > -1 ||
+      order.status.indexOf(value) > -1
+    );
+  });
+});
+const openOrderModal = ref(false);
+const showOrderDetails = (x: string) => {
+  openOrderModal.value = !openOrderModal.value;
+  openModal.value = false;
+  showActionsModal.value = x;
+  //   console.log(x);
 };
 </script>
 
@@ -212,8 +244,8 @@ const showActions = (x: string) => {
   background: #ffffff;
   border: 1px solid #dfdfdf;
   border-radius: 4px;
-  color: #b3b3b3;
   display: flex;
+  color: #333333;
   align-items: center;
   gap: 8px;
   padding: 0.4rem;
