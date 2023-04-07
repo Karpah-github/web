@@ -59,7 +59,7 @@ const showMoreDetails = (x: number) => {
         index
       >
         <div class="border border-[#dfdfdf] p-3 rounded-md">
-          <div class="flex justify-between items-start pb-5">
+          <div class="flex justify-between items-start">
             <div class="flex gap-3">
               <div class="w-24">
                 <img
@@ -71,7 +71,9 @@ const showMoreDetails = (x: number) => {
               <div
                 class="flex flex-col justify-between gap-y-5 text-dark font-light"
               >
-                <p class="">The Name of the product can be this long</p>
+                <p class="w-11/12 md:w-full">
+                  The Name of the product can be this long
+                </p>
                 <div class="flex justify-between">
                   <p>₦‎{{ order.price }}.00</p>
                   <p>Qty: {{ product.quantity }}</p>
@@ -80,13 +82,13 @@ const showMoreDetails = (x: number) => {
             </div>
             <button
               @click="showMoreDetails(index)"
-              class="font-light uppercase"
+              class="font-light uppercase pt-2"
             >
               <span
                 v-if="moreDetails !== index"
                 class="flex gap-1 text-sm text-[#B3B3B3]"
               >
-                details
+                <p class="hidden md:block">details</p>
                 <img
                   src="../../assets/icons/arrow-right.svg"
                   class="w-full"
@@ -94,7 +96,7 @@ const showMoreDetails = (x: number) => {
                 />
               </span>
               <span v-else class="flex items-center gap-1 text-sm text-primary">
-                hide details
+                <p class="hidden md:block">hide details</p>
                 <img
                   class="svg-primary w-5"
                   src="../../assets/icons/arrow-up-1.svg"
@@ -104,7 +106,7 @@ const showMoreDetails = (x: number) => {
             </button>
           </div>
           <div class="" v-if="moreDetails === index">
-            <div class="border-y border-[#F2F2F2] py-5">
+            <div class="border-y border-[#F2F2F2] py-5 mt-4">
               <h6 class="uppercase text-md font-light tracking-widest pb-2">
                 description
               </h6>
@@ -156,6 +158,64 @@ const showMoreDetails = (x: number) => {
               <p class="text-sm">{{ product.note }}</p>
             </div>
           </div>
+        </div>
+      </div>
+      <h4 class="text-xl pt-4 pb-3 mt-2">Customer details</h4>
+      <div
+        class="flex justify-between items-center pb-6 border-b border-[#dfdfdf]"
+      >
+        <div class="flex gap-2 items-center">
+          <span
+            class="bg-[#212121] text-white uppercase text-sm rounded-full w-8 h-8 flex justify-center items-center"
+            >{{ order.customerName.charAt(0) }}</span
+          >
+          <div class="flex flex-col">
+            <h6>{{ order.customerName }}</h6>
+            <p class="text-xs text-[#828282]">
+              {{ order.customerEmail }}
+            </p>
+          </div>
+        </div>
+        <button
+          class="bg-white md:w-44 p-2 text-sm uppercase text-dark rounded-sm shadow-md"
+        >
+          message buyer
+        </button>
+      </div>
+      <div class="md:flex justify-between py-6">
+        <div class="md:w-5/12 border-b border-[#dfdfdf] md:border-none">
+          <h4 class="text-xl pb-3">Shipping Details</h4>
+          <p class="text-neutral text-sm font-light">Address</p>
+          <p class="text-neutral text-sm pb-4 font-light">
+            123, Jeweess Bridge Apt. 174 London, UK.
+          </p>
+          <p class="text-neutral text-sm font-light">Phone Number</p>
+          <p class="text-neutral text-sm pb-4 font-light">474-746-3918</p>
+        </div>
+        <div class="md:w-6/12">
+          <h4 class="text-xl py-4">Order Summary</h4>
+          <ul class="flex flex-col gap-4">
+            <li class="flex justify-between">
+              <p class="text-neutral text-sm">Subtotal</p>
+              <p class="text-dark test-sm">₦‎129.00</p>
+            </li>
+            <li class="flex justify-between">
+              <p class="text-neutral text-sm">Discount</p>
+              <p class="text-dark test-sm">₦‎129.00</p>
+            </li>
+            <li class="flex justify-between">
+              <p class="text-neutral text-sm">Delivery</p>
+              <p class="text-dark test-sm">₦‎129.00</p>
+            </li>
+            <li class="flex justify-between">
+              <p class="text-neutral text-sm">Tax</p>
+              <p class="text-dark test-sm">₦‎129.00</p>
+            </li>
+            <li class="flex justify-between pt-2 border-t border-[#dfdfdf]">
+              <p class="text-neutral text-sm">Total</p>
+              <p class="text-dark test-sm">₦‎1129.00</p>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
