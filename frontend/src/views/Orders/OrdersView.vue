@@ -97,7 +97,7 @@
                 <div class="w-5 h-5 bg-[#DFDFDF] rounded-sm"></div>
               </td>
               <td class="table__id">
-                <p class="text-sm w-32 lg:w-full">{{ order.orderId }}</p>
+                <p class="text-sm w-32 lg:w-full">#{{ order.orderId }}</p>
               </td>
               <td class="table__name">
                 <div class="flex gap-2 items-center w-44 lg:w-full">

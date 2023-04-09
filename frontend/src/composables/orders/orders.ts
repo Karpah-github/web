@@ -1,6 +1,6 @@
 export const orderList = [
   {
-    orderId: "#ID12735",
+    orderId: "ID12735",
     customerName: "Raji Adeoye",
     customerEmail: "myemail@gmail.com",
     price: 129,
@@ -44,7 +44,7 @@ export const orderList = [
     ],
   },
   {
-    orderId: "#ID12736",
+    orderId: "ID12736",
     customerName: "Raji Adeoye",
     customerEmail: "myemail@gmail.com",
     price: 129,
@@ -72,7 +72,7 @@ export const orderList = [
     ],
   },
   {
-    orderId: "#ID12737",
+    orderId: "ID12737",
     customerName: "Raji Adeoye",
     customerEmail: "myemail@gmail.com",
     price: 129,
@@ -100,7 +100,7 @@ export const orderList = [
     ],
   },
   {
-    orderId: "#ID12738",
+    orderId: "ID12738",
     customerName: "Raji Adeoye",
     customerEmail: "myemail@gmail.com",
     price: 129,
@@ -110,7 +110,7 @@ export const orderList = [
     phoneNumber: "+1(474) 746-3918",
   },
   {
-    orderId: "#ID12739",
+    orderId: "ID12739",
     customerName: "Raji Adeoye",
     customerEmail: "myemail@gmail.com",
     price: 129,
@@ -120,7 +120,7 @@ export const orderList = [
     phoneNumber: "+1(474) 746-3918",
   },
   {
-    orderId: "#ID12740",
+    orderId: "ID12740",
     customerName: "Raji Adeoye",
     customerEmail: "myemail@gmail.com",
     price: 129,
@@ -130,7 +130,7 @@ export const orderList = [
     phoneNumber: "+1(474) 746-3918",
   },
   {
-    orderId: "#ID12741",
+    orderId: "ID12741",
     customerName: "Raji Adeoye",
     customerEmail: "myemail@gmail.com",
     price: 129,
@@ -140,7 +140,7 @@ export const orderList = [
     phoneNumber: "+1(474) 746-3918",
   },
   {
-    orderId: "#ID12742",
+    orderId: "ID12742",
     customerName: "Raji Adeoye",
     customerEmail: "myemail@gmail.com",
     price: 129,
@@ -150,7 +150,7 @@ export const orderList = [
     phoneNumber: "+1(474) 746-3918",
   },
   {
-    orderId: "#ID12743",
+    orderId: "ID12743",
     customerName: "Raji Adeoye",
     customerEmail: "myemail@gmail.com",
     price: 129,

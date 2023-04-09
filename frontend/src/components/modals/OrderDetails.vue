@@ -19,9 +19,11 @@ const showMoreDetails = (x: number) => {
       :class="showActionsModal === order.orderId ? 'show' : ''"
     >
       <div class="flex justify-between">
-        <h3 class="text-2xl">Order {{ order.orderId }}</h3>
+        <h3 class="text-2xl">Order #{{ order.orderId }}</h3>
         <div class="flex gap-8">
-          <img src="../../assets/icons/maximize.svg" alt="" />
+          <router-link :to="`orders/${order.orderId}`"
+            ><img src="../../assets/icons/maximize.svg" alt=""
+          /></router-link>
           <img @click="props.close" src="../../assets/icons/close.svg" alt="" />
         </div>
       </div>
