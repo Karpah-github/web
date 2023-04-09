@@ -6,24 +6,37 @@
     <div class="mb-4">
       <div class="flex font-light text-sm text-[#828282]">
         <span
-          class="uppercase flex active border-b border-[#828282] py-3 pl-2 pr-4"
+          @click="showOrders('all')"
+          class="uppercase flex border-b border-[#828282] py-3 pl-2 pr-4"
+          :class="orderDisplay === 'all' ? 'active' : ''"
         >
           All
           <div
             class="w-5 h-5 ml-1 flex items-center justify-center num text-xs rounded-full bg-[#828282] text-white"
           >
-            12
+            {{ orderList.length }}
           </div>
         </span>
-        <span class="uppercase border-b border-[#828282] py-3 px-2 md:px-8">
+        <span
+          @click="showOrders('ongoing')"
+          :class="orderDisplay === 'ongoing' ? 'active' : ''"
+          class="uppercase flex border-b border-[#828282] py-3 px-2 md:px-8"
+        >
           ongoing
-          <!-- <span class="w-4 h-4 rounded-full bg-[#828282] text-white">12</span> -->
+          <span
+            class="w-5 h-5 ml-1 flex items-center justify-center num text-xs rounded-full bg-[#828282] text-white"
+            >{{ ongoingOrders.length }}</span
+          >
         </span>
-        <span class="uppercase flex border-b border-[#828282] py-3 pl-4">
+        <span
+          @click="showOrders('past')"
+          :class="orderDisplay === 'past' ? 'active' : ''"
+          class="uppercase flex border-b border-[#828282] py-3 pl-4"
+        >
           Past
           <span
             class="w-5 h-5 ml-1 flex items-center justify-center num text-xs rounded-full bg-[#828282] text-white"
-            >12</span
+            >{{ pastOrders.length }}</span
           >
         </span>
       </div>
@@ -191,26 +204,75 @@ const showActions = (x: string) => {
     showActionsModal.value = x;
   }
 };
+const orders = ref<any>([]);
+const orderDisplay = ref("all");
+const showOrders = (x: string) => {
+  orderDisplay.value = x;
+  if (orderList && x === "all") {
+    const allOrders = orderList;
+    orders.value = allOrders;
+  } else if (x === "ongoing") {
+    const ongoingOrder = orderList.filter(
+      (ongoingOrders) => ongoingOrders.status === "processing"
+    );
+    orders.value = ongoingOrder;
+  } else {
+    const pastOrder = orderList.filter(
+      (pastOrders) => pastOrders.status !== "processing"
+    );
+    orders.value = pastOrder;
+  }
+};
+const ongoingOrders = orderList.filter(function (orders) {
+  return orders.status === "processing";
+});
+const pastOrders = orderList.filter(function (orders) {
+  return orders.status !== "processing";
+});
 const searchedOrder = ref("");
 const filteredOrders = computed(() => {
-  const value =
-    searchedOrder.value.charAt(0).toUpperCase() + searchedOrder.value.slice(1);
-  return orderList.filter(function (order) {
-    return (
-      order.customerName.indexOf(value) > -1 ||
-      order.orderId.indexOf(value) > -1 ||
-      order.customerEmail.indexOf(value) > -1 ||
-      order.deliveryDate.indexOf(value) > -1 ||
-      order.status.indexOf(value) > -1
+  if (orders.value.length > 0) {
+    return orders.value.filter(
+      (order: any) =>
+        order.customerName
+          .toLowerCase()
+          .includes(searchedOrder.value.toLowerCase()) ||
+        order.customerEmail
+          .toLowerCase()
+          .includes(searchedOrder.value.toLowerCase()) ||
+        order.orderId
+          .toLowerCase()
+          .includes(searchedOrder.value.toLowerCase()) ||
+        order.deliveryDate
+          .toLowerCase()
+          .includes(searchedOrder.value.toLowerCase()) ||
+        order.status.toLowerCase().includes(searchedOrder.value.toLowerCase())
     );
-  });
+  } else {
+    return orderList?.filter(
+      (order: any) =>
+        order.customerName
+          .toLowerCase()
+          .includes(searchedOrder.value.toLowerCase()) ||
+        order.customerEmail
+          .toLowerCase()
+          .includes(searchedOrder.value.toLowerCase()) ||
+        order.orderId
+          .toLowerCase()
+          .includes(searchedOrder.value.toLowerCase()) ||
+        order.deliveryDate
+          .toLowerCase()
+          .includes(searchedOrder.value.toLowerCase()) ||
+        order.status.toLowerCase().includes(searchedOrder.value.toLowerCase())
+    );
+  }
 });
+
 const openOrderModal = ref(false);
 const showOrderDetails = (x: string) => {
   openOrderModal.value = !openOrderModal.value;
   openModal.value = false;
   showActionsModal.value = x;
-  //   console.log(x);
 };
 </script>
 
