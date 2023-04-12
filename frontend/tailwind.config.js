@@ -8,6 +8,7 @@ module.exports = {
         secondary: "#51e1a7",
         light: "#FDFDFD",
         "dark-light": "#323259",
+        neutral: "#828282",
       },
     },
   },
