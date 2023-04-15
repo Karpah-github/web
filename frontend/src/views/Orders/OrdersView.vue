@@ -33,7 +33,7 @@
           :class="orderDisplay === 'past' ? 'active' : ''"
           class="uppercase flex border-b border-[#828282] py-3 pl-4"
         >
-          Past
+          Closed
           <span
             class="w-5 h-5 ml-1 flex items-center justify-center num text-xs rounded-full bg-[#828282] text-white"
             >{{ pastOrders.length }}</span
