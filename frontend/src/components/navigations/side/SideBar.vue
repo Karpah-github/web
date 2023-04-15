@@ -90,7 +90,6 @@ watch(route, () => {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 9999;
   background-color: white;
   width: 220px;
   @media (max-width: 768px) {
