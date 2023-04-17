@@ -36,7 +36,7 @@
               <button class="btn-secondary w-full py-2">View Shop</button>
             </div>
           </div>
-          <router-link to="/"> Overview </router-link>
+          <router-link to="/overview"> Overview </router-link>
           <router-link to="/orders"> Orders </router-link>
           <router-link to="/products"> Product </router-link>
           <router-link to="/messages"> Messages </router-link>
