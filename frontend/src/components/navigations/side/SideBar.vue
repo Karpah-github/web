@@ -38,7 +38,7 @@
           </div>
           <router-link to="/overview"> Overview </router-link>
           <router-link to="/orders"> Orders </router-link>
-          <router-link to="/products"> Product </router-link>
+          <router-link to="/products"> Products </router-link>
           <router-link to="/messages"> Messages </router-link>
           <router-link to="/analytics"> Analytics </router-link>
         </ul>

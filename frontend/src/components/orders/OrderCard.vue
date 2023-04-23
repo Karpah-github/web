@@ -26,7 +26,7 @@ const props = defineProps(["order"]);
       </div>
     </div>
     <div class="flex items-center gap-4 my-4">
-      <div class="w-32">
+      <div class="w-28">
         <img class="w-full" src="../../assets/image.png" alt="" />
       </div>
       <div class="">
@@ -60,6 +60,6 @@ const props = defineProps(["order"]);
   border: 1px solid #dfdfdf;
   border-radius: 4px;
   padding: 14px;
-  min-width: 340px;
+  min-width: 310px;
 }
 </style>
