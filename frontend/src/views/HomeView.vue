@@ -1,7 +1,9 @@
-<template>
-  <p>kemi</p>
-</template>
-
 <script setup lang="ts"></script>
 
-<style scoped></style>
+<template>
+  <div>
+    <h1>kemi</h1>
+  </div>
+</template>
+
+<style lang="scss" scoped></style>
