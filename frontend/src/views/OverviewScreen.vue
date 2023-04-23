@@ -11,7 +11,7 @@
     <div class="flex gap-4 flex-wrap mt-6 xl:justify-between">
       <div class="stat-box">
         <p class="text-neutral text-md font-light">Total Revenue</p>
-        <h3 class="text-dark text-2xl pt-2">$38,498.95</h3>
+        <h3 class="text-dark text-2xl pt-2">₦‎129,498.95</h3>
       </div>
       <div class="stat-box">
         <p class="text-neutral text-md font-light">Shop Visits</p>
@@ -112,9 +112,15 @@
     <div class="activities pb-6">
       <div class="flex justify-between">
         <h3 class="text-xl">Activity</h3>
+        <router-link
+          to="/"
+          v-if="activityList"
+          class="text-primary font-light text-sm"
+          >View Activity</router-link
+        >
       </div>
-      <div class="mb-4">
-        <div class="empty-page h-64 my-4">
+      <div class="my-4">
+        <div v-if="!activityList" class="empty-page h-64 my-4">
           <div class="text-center">
             <div class="w-28 h-full mx-auto mb-2">
               <img
@@ -126,14 +132,29 @@
             <p class="text-md text-[#4D4D4D] font-light mx-auto">Nothing yet</p>
           </div>
         </div>
+        <div v-else class="grid md:grid-cols-2 gap-x-12 gap-y-4">
+          <div
+            class=""
+            v-for="activity in activityList"
+            :key="activity.activityId"
+          >
+            <activity-item :activity="activity" />
+          </div>
+        </div>
       </div>
     </div>
     <div class="products pb-6">
       <div class="flex justify-between">
         <h3 class="text-xl">Top Products</h3>
+        <router-link
+          to="/products"
+          v-if="productList"
+          class="text-primary font-light text-sm"
+          >View Products</router-link
+        >
       </div>
       <div class="mb-4">
-        <div class="empty-page h-72 my-4">
+        <div v-if="!productList" class="empty-page h-72 my-4">
           <div class="text-center">
             <div class="w-28 h-full mx-auto mb-2">
               <img
@@ -153,6 +174,16 @@
             >
           </div>
         </div>
+        <div v-else class="orders flex gap-5">
+          <product-card
+            v-for="(product, index) in productList"
+            :key="index"
+            :price="product.price"
+            :name="product.name"
+            :status="product.status"
+            :upload-date="product.uploadDate"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -162,11 +193,15 @@
 import { ref } from "vue";
 import { orderList } from "@/composables/orders/orders";
 import OrderCard from "@/components/orders/OrderCard.vue";
+import { productList } from "@/composables/products/products";
+import ProductCard from "@/components/products/ProductCard.vue";
+import { activityList } from "@/composables/activities/activities";
+import ActivityItem from "@/components/Activity/ActivityItem.vue";
 
 const orderDisplay = ref("ongoing");
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .active {
   color: #cc8f56;
   border-bottom: 1px solid #cc8f56 !important;
@@ -200,5 +235,8 @@ const orderDisplay = ref("ongoing");
   max-width: 100%;
   overflow-x: scroll;
   margin: 16px 0;
+}
+.product-card {
+  min-width: 310px;
 }
 </style>
