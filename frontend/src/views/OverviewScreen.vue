@@ -132,7 +132,7 @@
             <p class="text-md text-[#4D4D4D] font-light mx-auto">Nothing yet</p>
           </div>
         </div>
-        <div v-else class="grid md:grid-cols-2 gap-x-12 gap-y-4">
+        <div v-else class="grid lg:grid-cols-2 gap-x-12 gap-y-4">
           <div
             class=""
             v-for="activity in activityList"
