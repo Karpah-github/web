@@ -112,6 +112,7 @@
               :name="product.name"
               :status="product.status"
               :upload-date="product.uploadDate"
+              :id="product.id"
             />
           </tbody>
         </table>
