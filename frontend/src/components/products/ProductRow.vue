@@ -31,24 +31,75 @@
       </div>
     </td>
     <td class="table__actions text-center">
-      <div class="flex gap-3 w-full">
+      <div class="flex gap-3 w-full relative">
         <button class="btn-secondary py-2 px-4">Edit</button>
-        <button class="btn-secondary py-1 px-2 w-10">
+        <button
+          class="btn-secondary py-1 px-2 w-10"
+          @click="showActions(props.id)"
+        >
           <img class="w-full" src="../../assets/icons/more.svg" alt="" />
         </button>
+        <div class="">
+          <ProductActions
+            :open="openModal"
+            :close="showActions"
+            :show-delete-modal="showDeleteModal"
+            :show-hide-modal="showHideModal"
+            :id="props.id"
+            :show-actions-modal="showActionsModal"
+          />
+        </div>
       </div>
     </td>
+    <ProductDelete
+      :open="openDeleteModal"
+      :close="showDeleteModal"
+      :id="props.id"
+      :show-actions-modal="showActionsModal"
+    />
+    <HideProduct
+      :open="openHideModal"
+      :close="showHideModal"
+      :id="props.id"
+      :show-actions-modal="showActionsModal"
+    />
   </tr>
 </template>
 
 <script setup lang="ts">
-import { defineProps } from "vue";
+import { defineProps, ref } from "vue";
+import HideProduct from "../modals/HideProduct.vue";
+import ProductActions from "../modals/ProductActions.vue";
+import ProductDelete from "../modals/ProductDelete.vue";
 const props = defineProps({
+  id: String,
   name: String,
   price: Number,
   uploadDate: String,
   status: String,
 });
+let openModal = ref(false);
+const showActionsModal = ref("");
+const showActions = (x: any) => {
+  openModal.value = !openModal.value;
+  if (showActionsModal.value === x) {
+    showActionsModal.value = "";
+  } else {
+    showActionsModal.value = x;
+  }
+};
+const openDeleteModal = ref(false);
+const openHideModal = ref(false);
+const showDeleteModal = (x: string) => {
+  openDeleteModal.value = !openDeleteModal.value;
+  openModal.value = false;
+  showActionsModal.value = x;
+};
+const showHideModal = (x: string) => {
+  openHideModal.value = !openHideModal.value;
+  openModal.value = false;
+  showActionsModal.value = x;
+};
 </script>
 
 <style></style>
