@@ -1,5 +1,5 @@
 <template>
-  <div class="px-4 lg:px-10">
+  <div class="px-5 md:px-8">
     <div class="flex justify-between py-4">
       <h1 class="">Products</h1>
       <div class="flex gap-4 cursor-pointer items-center">
