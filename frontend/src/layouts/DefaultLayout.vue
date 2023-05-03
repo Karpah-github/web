@@ -3,7 +3,7 @@
     <div
       class="flex md:hidden justify-between px-5 py-4 items-center mobile-header w-full"
     >
-      <button class="p-2" @click="toggleSidebar">
+      <button class="p-2" @click="toggleSidebar" data-testid="navToggleTest">
         <img class="w-full" src="../assets/icons/menu.svg" alt="" />
       </button>
       <div class="w-20">
@@ -57,7 +57,7 @@ import { ref } from "vue";
 import SideBar from "../components/navigations/side/SideBar.vue";
 const toggleSidebar = () => {
   const sidebar = document.getElementById("sidebar");
-  sidebar!.classList.add("open");
+  sidebar?.classList.add("open");
 };
 const openNotificationModal = ref(false);
 const showNotificationModal = () => {
