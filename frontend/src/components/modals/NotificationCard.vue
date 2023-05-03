@@ -103,8 +103,8 @@ const props = defineProps(["open", "close", "showNotificationModal"]);
             </div>
           </div>
         </div>
-        <router-link to="/" class="text-neutral text-sm pl-2"
-          >See all activities</router-link
+        <a href="/store-activities" class="text-neutral text-sm pl-2"
+          >See all activities</a
         >
       </div>
     </div>
