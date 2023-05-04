@@ -1,5 +1,5 @@
 <template>
-  <div class="" id="sidebar">
+  <div class="" id="sidebar" data-testid="sidebarOpenTest">
     <transition name="slide" appear>
       <aside
         class="aside flex flex-col justify-between gap-4 px-4 py-8 h-screen md:border-r border-[#DFDFDF]"
@@ -41,6 +41,7 @@
           <router-link to="/products"> Products </router-link>
           <router-link to="/messages"> Messages </router-link>
           <router-link to="/analytics"> Analytics </router-link>
+          <router-link to="/settings"> Settings </router-link>
         </ul>
         <nav>
           <div class="flex w-full -mb-3 mt-5 text-white dark:text-white">
@@ -68,11 +69,11 @@ import { useRoute } from "vue-router";
 import { watch } from "vue";
 
 const closeSidebar = () => {
-  document.querySelector<HTMLElement>("#sidebar")!.classList.remove("open");
+  document.querySelector<HTMLElement>("#sidebar")?.classList.remove("open");
 };
 const route = useRoute();
 watch(route, () => {
-  document.querySelector<HTMLElement>("#sidebar")!.classList.remove("open");
+  document.querySelector<HTMLElement>("#sidebar")?.classList.remove("open");
 });
 </script>
 

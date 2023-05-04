@@ -3,7 +3,7 @@
     <div
       class="flex md:hidden justify-between px-5 py-4 items-center mobile-header w-full"
     >
-      <button class="p-2" @click="toggleSidebar">
+      <button class="p-2" @click="toggleSidebar" data-testid="navToggleTest">
         <img class="w-full" src="../assets/icons/menu.svg" alt="" />
       </button>
       <div class="w-20">
@@ -28,7 +28,7 @@
             <input type="search" placeholder="Search here" />
           </div>
           <div class="flex items-center gap-4">
-            <div class="">
+            <div class="cursor-pointer" @click="showNotificationModal">
               <img
                 class="w-full"
                 src="../assets/icons/notification.svg"
@@ -36,6 +36,13 @@
               />
             </div>
             <button class="btn-secondary py-2 px-4">View Shop</button>
+            <div class="">
+              <NotificationCard
+                :open="openNotificationModal"
+                :close="showNotificationModal"
+                :show-notification-modal="showNotificationModal"
+              />
+            </div>
           </div>
         </div>
         <slot />
@@ -45,10 +52,16 @@
 </template>
 
 <script setup lang="ts">
+import NotificationCard from "@/components/modals/NotificationCard.vue";
+import { ref } from "vue";
 import SideBar from "../components/navigations/side/SideBar.vue";
 const toggleSidebar = () => {
   const sidebar = document.getElementById("sidebar");
-  sidebar!.classList.add("open");
+  sidebar?.classList.add("open");
+};
+const openNotificationModal = ref(false);
+const showNotificationModal = () => {
+  openNotificationModal.value = !openNotificationModal.value;
 };
 </script>
 

@@ -51,6 +51,14 @@ const routes: Array<RouteRecordRaw> = [
         /* webpackChunkName: "order detail" */ "../views/Orders/OrderDetailView.vue"
       ),
   },
+  {
+    path: "/store-activities",
+    name: "store activity",
+    component: () =>
+      import(
+        /* webpackChunkName: "order detail" */ "../views/Activity/ActivityView.vue"
+      ),
+  },
 ];
 
 const router = createRouter({
