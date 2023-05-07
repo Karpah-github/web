@@ -20,7 +20,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: auth-srv
-soec:
+spec:
   selector:
     app: auth
   ports:
