@@ -11,6 +11,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: docker login -u ${{secrets.DOCKER_USERNAME}} -p ${{secrets.DOCKER_PASSWORD}}
-      - run: docker build -t julietkarpah/karpahclient -f ./frontend/Dockerfile.dev .
+      - run: docker build -t julietkarpah/karpahclient -f ./frontend/Dockerfile.dev ./frontend
       - run: docker run -e CI=true julietkarpah/karpahclient npm run test:unit
        
