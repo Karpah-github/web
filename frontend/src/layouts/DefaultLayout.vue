@@ -21,13 +21,16 @@
         <div
           class="hidden py-3 px-8 w-full md:flex items-center justify-between md:border-b border-[#E6E6E6]"
         >
-          <div class="search">
+          <div
+            v-show="route.name === 'products' || route.name === 'orders'"
+            class="search"
+          >
             <span class="w-5">
               <img class="w-full" src="../assets/icons/search.svg" alt="" />
             </span>
             <input type="search" placeholder="Search here" />
           </div>
-          <div class="flex items-center gap-4">
+          <div class="flex items-center w-full justify-end gap-4">
             <div class="cursor-pointer" @click="showNotificationModal">
               <img
                 class="w-full"
@@ -54,6 +57,7 @@
 <script setup lang="ts">
 import NotificationCard from "@/components/modals/NotificationCard.vue";
 import { ref } from "vue";
+import { useRoute } from "vue-router";
 import SideBar from "../components/navigations/side/SideBar.vue";
 const toggleSidebar = () => {
   const sidebar = document.getElementById("sidebar");
@@ -63,6 +67,7 @@ const openNotificationModal = ref(false);
 const showNotificationModal = () => {
   openNotificationModal.value = !openNotificationModal.value;
 };
+const route = useRoute();
 </script>
 
 <style lang="scss">
