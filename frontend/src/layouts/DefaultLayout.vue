@@ -74,11 +74,13 @@ const route = useRoute();
 .main {
   width: calc(100% - 220px);
   margin-left: 220px;
+
   @media (max-width: 768px) {
     margin-left: 0;
     width: 100%;
   }
 }
+
 .search {
   background: #ffffff;
   border: 1px solid #dfdfdf;
@@ -88,9 +90,11 @@ const route = useRoute();
   align-items: center;
   gap: 8px;
   padding: 0.4rem;
+
   input {
     outline: none;
   }
+
   input::placeholder {
     color: #b3b3b3;
     font-weight: 400;

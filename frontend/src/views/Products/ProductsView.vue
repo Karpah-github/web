@@ -25,26 +25,39 @@
       </div>
     </div>
     <div class="flex justify-between items-center">
-      <div class="flex justify-between font-light text-sm text-[#828282]">
+      <div class="flex font-light text-sm text-[#828282] cursor-pointer">
         <span
-          class="uppercase flex active border-b border-[#828282] py-3 pl-2 pr-4"
+          @click="showProducts('all')"
+          class="uppercase flex border-b border-[#828282] py-3 pl-2 pr-4"
+          :class="productDisplay === 'all' ? 'active' : ''"
         >
           All
           <div
             class="w-5 h-5 ml-1 flex items-center justify-center num text-xs rounded-full bg-[#828282] text-white"
           >
-            12
+            {{ productList.length }}
           </div>
         </span>
-        <span class="uppercase border-b border-[#828282] py-3 px-2 md:px-8">
-          Active
-          <!-- <span class="w-4 h-4 rounded-full bg-[#828282] text-white">12</span> -->
-        </span>
-        <span class="uppercase flex border-b border-[#828282] py-3 pl-4">
-          Draft
+        <span
+          @click="showProducts('active-products')"
+          :class="productDisplay === 'active-products' ? 'active' : ''"
+          class="uppercase flex border-b border-[#828282] py-3 px-2 md:px-8"
+        >
+          active
           <span
             class="w-5 h-5 ml-1 flex items-center justify-center num text-xs rounded-full bg-[#828282] text-white"
-            >12</span
+            >{{ activeProducts.length }}</span
+          >
+        </span>
+        <span
+          @click="showProducts('past')"
+          :class="productDisplay === 'past' ? 'active' : ''"
+          class="uppercase flex border-b border-[#828282] py-3 pl-4"
+        >
+          draft
+          <span
+            class="w-5 h-5 ml-1 flex items-center justify-center num text-xs rounded-full bg-[#828282] text-white"
+            >{{ draftProducts.length }}</span
           >
         </span>
       </div>
@@ -106,7 +119,7 @@
 
           <tbody>
             <ProductRow
-              v-for="(product, index) in productList"
+              v-for="(product, index) in products"
               :key="index"
               :price="product.price"
               :name="product.name"
@@ -122,7 +135,7 @@
         class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 w-full"
       >
         <ProductCard
-          v-for="(product, index) in productList"
+          v-for="(product, index) in products"
           :key="index"
           :price="product.price"
           :name="product.name"
@@ -143,6 +156,32 @@ const view = ref("grid");
 const changeView = (v: string) => {
   view.value = v;
 };
+// Products filter
+const products = ref<any>(productList);
+const productDisplay = ref("all");
+const showProducts = (x: string) => {
+  productDisplay.value = x;
+  if (productList && x === "all") {
+    const allProducts = productList;
+    products.value = allProducts;
+  } else if (x === "active-products") {
+    const ongoingOrder = productList.filter(
+      (activeProducts) => activeProducts.status !== "Draft"
+    );
+    products.value = ongoingOrder;
+  } else {
+    const draftProduct = productList.filter(
+      (draftProducts) => draftProducts.status === "Draft"
+    );
+    products.value = draftProduct;
+  }
+};
+const activeProducts = productList.filter(function (orders) {
+  return orders.status !== "Draft";
+});
+const draftProducts = productList.filter(function (product) {
+  return product.status === "Draft";
+});
 </script>
 
 <style lang="scss">
