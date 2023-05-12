@@ -14,9 +14,11 @@ const router = useRouter();
       <p class="text-dark">Store Activity</p>
     </div>
     <p class="text-uppercase mt-6">Today</p>
-    <div class="flex justify-between w-full border-b border-[#DFDFDF] py-5">
-      <div class="flex gap-2 items-center">
-        <img src="../../assets/avatar.svg" class="w-10" alt="avatar" />
+    <div
+      class="flex flex-col md:flex-row gap-2 justify-between w-full border-b border-[#DFDFDF] py-5"
+    >
+      <div class="flex gap-2 items-start">
+        <img src="../../assets/avatar.svg" class="w-12" alt="avatar" />
         <div class="">
           <p class="text-dark mb-1 text-md">You have a new message</p>
           <p class="font-light text-neutral text-sm">
@@ -26,9 +28,11 @@ const router = useRouter();
       </div>
       <p class="text-[#B3B3B3] text-sm">March 24, 2023 at 4:43PM</p>
     </div>
-    <div class="flex justify-between w-full border-b border-[#DFDFDF] py-5">
-      <div class="flex gap-2 items-center">
-        <img src="../../assets/avatar.svg" class="w-10" alt="avatar" />
+    <div
+      class="flex flex-col md:flex-row gap-2 justify-between w-full border-b border-[#DFDFDF] py-5"
+    >
+      <div class="flex gap-2 items-start">
+        <img src="../../assets/avatar.svg" class="w-12" alt="avatar" />
         <div class="">
           <p class="text-dark mb-1 text-md">You have a new message</p>
           <p class="font-light text-neutral text-sm">
@@ -38,9 +42,11 @@ const router = useRouter();
       </div>
       <p class="text-[#B3B3B3] text-sm">March 24, 2023 at 4:43PM</p>
     </div>
-    <div class="flex justify-between w-full border-b border-[#DFDFDF] py-5">
-      <div class="flex gap-2 items-center">
-        <img src="../../assets/avatar.svg" class="w-10" alt="avatar" />
+    <div
+      class="flex flex-col md:flex-row gap-2 justify-between w-full border-b border-[#DFDFDF] py-5"
+    >
+      <div class="flex gap-2 items-start">
+        <img src="../../assets/avatar.svg" class="w-12" alt="avatar" />
         <div class="">
           <p class="text-dark mb-1 text-md">You have a new message</p>
           <p class="font-light text-neutral text-sm">
@@ -50,9 +56,36 @@ const router = useRouter();
       </div>
       <p class="text-[#B3B3B3] text-sm">March 24, 2023 at 4:43PM</p>
     </div>
-    <div class="flex justify-between w-full border-b border-[#DFDFDF] py-5">
-      <div class="flex gap-2 items-center">
-        <img src="../../assets/avatar.svg" class="w-10" alt="avatar" />
+    <div class="flex flex-col md:flex-row gap-2 justify-between w-full py-5">
+      <div class="flex gap-2 items-start">
+        <img src="../../assets/avatar.svg" class="w-12" alt="avatar" />
+        <div class="">
+          <p class="text-dark mb-1 text-md">You have a new message</p>
+          <p class="font-light text-neutral text-sm">
+            A payment of $7.20 has been applied to your financial account.
+          </p>
+        </div>
+      </div>
+      <p class="text-[#B3B3B3] text-sm">March 24, 2023 at 4:43PM</p>
+    </div>
+    <p class="text-uppercase mt-6">March 2, 2023</p>
+    <div
+      class="flex flex-col md:flex-row gap-2 justify-between w-full border-b border-[#DFDFDF] py-5"
+    >
+      <div class="flex gap-2 items-start">
+        <img src="../../assets/avatar.svg" class="w-12" alt="avatar" />
+        <div class="">
+          <p class="text-dark mb-1 text-md">You have a new message</p>
+          <p class="font-light text-neutral text-sm">
+            A payment of $7.20 has been applied to your financial account.
+          </p>
+        </div>
+      </div>
+      <p class="text-[#B3B3B3] text-sm">March 24, 2023 at 4:43PM</p>
+    </div>
+    <div class="flex flex-col md:flex-row gap-2 justify-between w-full py-5">
+      <div class="flex gap-2 items-start">
+        <img src="../../assets/avatar.svg" class="w-12" alt="avatar" />
         <div class="">
           <p class="text-dark mb-1 text-md">You have a new message</p>
           <p class="font-light text-neutral text-sm">
