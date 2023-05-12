@@ -56,7 +56,7 @@ const routes: Array<RouteRecordRaw> = [
     name: "store activity",
     component: () =>
       import(
-        /* webpackChunkName: "order detail" */ "../views/Activity/ActivityView.vue"
+        /* webpackChunkName: "store activities" */ "../views/Activity/ActivityView.vue"
       ),
   },
 ];
