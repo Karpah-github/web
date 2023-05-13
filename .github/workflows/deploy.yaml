@@ -21,7 +21,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: ./frontend
-          dockerfile: Dockerfile.dev
+          file: Dockerfile.dev
           load: true
           tags: julietkarpah/frontend-unit
       - name: Unit Test
