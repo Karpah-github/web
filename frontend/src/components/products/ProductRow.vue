@@ -1,6 +1,6 @@
 <template>
-  <tr class="table__row text-[#333333]">
-    <td class="table__image py-3 px-2">
+  <tr class="table__row text-[#333333] border-b border-b-[#DFDFDF]">
+    <td class="table__image py-4 px-2">
       <div class="flex items-center gap-4">
         <div class="w-32">
           <img class="w-full" src="../../assets/image.png" alt="" />
