@@ -26,4 +26,4 @@ jobs:
           tags: julietkarpah/frontend-unit
       - name: Unit Test
         run: |
-          docker run -e CI=true test npm run test:unit
+          docker run -e CI=true julietkarpah/frontend-unit npm run test:unit
