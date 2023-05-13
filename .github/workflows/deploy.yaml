@@ -21,14 +21,9 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: ./frontend
+          dockerfile: Dockerfile.dev
           load: true
           tags: julietkarpah/frontend-unit
-      -
-        name: Unit Test
+      - name: Unit Test
         run: |
           docker run -e CI=true test npm run test:unit
-
-      - name: build the stack
-        run: docker build -t test -f ./frontend/Dockerfile.dev ./frontend
-      - name: run the tests
-        run: docker run -e CI=true test npm run test:unit
