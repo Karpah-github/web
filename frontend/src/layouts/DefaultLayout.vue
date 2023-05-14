@@ -22,7 +22,11 @@
           class="hidden py-3 px-8 w-full md:flex items-center justify-between md:border-b border-[#E6E6E6]"
         >
           <div
-            v-show="route.name === 'products' || route.name === 'orders'"
+            v-show="
+              route.name === 'products' ||
+              route.name === 'orders' ||
+              route.name === 'messages'
+            "
             class="search"
           >
             <span class="w-5">
