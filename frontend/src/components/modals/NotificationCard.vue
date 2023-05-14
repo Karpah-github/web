@@ -7,7 +7,9 @@ const props = defineProps(["open", "close", "showNotificationModal"]);
 <template>
   <modal :open="props.open" :close="props.close" class="overflow-y-hidden">
     <div class="notification-modal py-2" :class="props.open ? 'show' : ''">
-      <div class="px-2 flex justify-between py-2 border-b border-[#DFDFDF]">
+      <div
+        class="px-2 flex justify-between py-2 border-b border-neutral-border"
+      >
         <h3 class="font-medium">Notifications</h3>
         <p class="text-neutral text-sm font-light">Mark all as read</p>
       </div>
