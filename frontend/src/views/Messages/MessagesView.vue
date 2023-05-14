@@ -136,7 +136,7 @@ const addImages = (input: any) => {
         </div>
       </div>
     </section>
-    <section class="hidden md:block md:w-8/12">
+    <section class="hidden md:block md:w-8/12 overflow-y-scroll">
       <div
         v-if="!selectedChat && !messageList"
         class="flex flex-col items-center justify-center h-[75vh] my-4"
@@ -172,10 +172,7 @@ const addImages = (input: any) => {
           </p>
         </div>
       </div>
-      <div
-        v-if="selectedChat"
-        class="flex flex-col justify-between gap-4 h-screen"
-      >
+      <div v-if="selectedChat" class="flex flex-col justify-between gap-4">
         <div class="">
           <div
             class="w-full p-3 flex justify-between items-center border-b border-neutral-border"
@@ -187,11 +184,11 @@ const addImages = (input: any) => {
               >
               <h6>{{ selectedChat?.username }}</h6>
             </div>
-            <span class="">
+            <div class="">
               <img src="../../assets/icons/more.svg" alt="more icon" />
-            </span>
+            </div>
           </div>
-          <div class="my-2 px-4">
+          <div class="my-2 px-4 h-[80vh]">
             <p class="text-center text-sm text-neutral my-3 font-light">
               27 March, 2023
             </p>
@@ -204,9 +201,7 @@ const addImages = (input: any) => {
               <div
                 class="flex gap-2 my-2"
                 :class="[
-                  chat.from === userId
-                    ? 'flex-row-reverse items-end bg-[#FAFAFA]'
-                    : '',
+                  chat.from === userId ? 'flex-row-reverse items-end' : '',
                 ]"
               >
                 <div class="f">
@@ -217,14 +212,18 @@ const addImages = (input: any) => {
                   />
                 </div>
                 <div
-                  class="border border-[#ECECEC] w-full rounded-md px-2 py-1 text-sm"
-                  :class="[chat.from === userId ? 'border-[#F2F2F2]' : '']"
+                  class="border border-[#ECECEC] w-[97%] rounded-md px-2 py-1 text-sm"
+                  :class="[
+                    chat.from === userId ? 'border-[#F2F2F2] bg-[#FAFAFA]' : '',
+                  ]"
                 >
                   <p class="text-[#4D4D4D]">{{ chat.userMessage }}</p>
-                  <div class="w-full">
+                  <div
+                    v-if="chat?.userMessageImage"
+                    class="w-full h-64 flex justify-center"
+                  >
                     <img
-                      class="h-48"
-                      v-if="chat?.userMessageImage"
+                      class="w-full h-full object-contain"
                       :src="chat?.userMessageImage"
                       alt="image message"
                     />
