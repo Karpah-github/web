@@ -26,12 +26,14 @@ const props = defineProps(["order"]);
       </div>
     </div>
     <div class="flex items-center gap-4 my-4">
-      <div class="w-28">
+      <div class="w-24">
         <img class="w-full" src="../../assets/image.png" alt="" />
       </div>
       <div class="">
-        <p class="text-md my-1">Salsa African Attire</p>
-        <router-link to="/" class="text-primary font-light text-md"
+        <p class="text-sm my-1">Salsa African Attire</p>
+        <router-link
+          :to="`orders/${order.orderId}`"
+          class="text-primary font-light text-sm"
           >SHOW DETAILS</router-link
         >
       </div>
@@ -61,5 +63,6 @@ const props = defineProps(["order"]);
   border-radius: 4px;
   padding: 14px;
   min-width: 310px;
+  height: 300px;
 }
 </style>
