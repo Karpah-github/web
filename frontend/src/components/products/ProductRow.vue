@@ -1,5 +1,5 @@
 <template>
-  <tr class="table__row text-[#333333] border-b border-b-[#DFDFDF]">
+  <tr class="table__row text-[#333333] border-b border-b-neutral-border">
     <td class="table__image py-4 px-2">
       <div class="flex items-center gap-4">
         <div class="w-32">
