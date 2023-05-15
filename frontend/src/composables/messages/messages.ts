@@ -30,3 +30,22 @@ export const messageList = [
     createdAt: "Mar 3, 2023",
   },
 ];
+
+export const messageRequestList = [
+  {
+    avatar:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+    username: "Janet Doe",
+    message:
+      "Hi there! I'm interested in the Salsa African Dress you're selling. Can you tell me more about it?",
+    createdAt: "Mar 3, 2023",
+  },
+  {
+    avatar:
+      "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80",
+    username: "John Doe",
+    message:
+      "Great, I think I'm a size medium. Do you have any measurements for the dress?",
+    createdAt: "Mar 3, 2023",
+  },
+];
