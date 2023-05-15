@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import { messageList } from "../../composables/messages/messages";
+import {
+  messageList,
+  messageRequestList,
+} from "../../composables/messages/messages";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 dayjs.extend(relativeTime);
@@ -49,6 +52,7 @@ const addImages = (input: any) => {
     reader.readAsDataURL(files[i]);
   }
 };
+const openMessageRequest = ref(false);
 </script>
 
 <template>
@@ -56,7 +60,8 @@ const addImages = (input: any) => {
     <section
       class="md:w-4/12 overflow-y-scroll px-4 md:border-r md:border-neutral-border"
     >
-      <div class="">
+      <!-- Messages title and searchbar -->
+      <div class="" v-if="!openMessageRequest">
         <div class="flex my-4 items-center gap-2">
           <h4 class="text-lg">Messages</h4>
           <img class="w-4" src="../../assets/icons/arrow-down.svg" alt="" />
@@ -68,9 +73,22 @@ const addImages = (input: any) => {
           <input type="search" placeholder="Search here" />
         </div>
       </div>
+      <div class="" v-else>
+        <div class="flex my-4 items-center gap-2">
+          <button
+            @click.prevent="openMessageRequest = false"
+            class="btn-secondary p-1"
+          >
+            <img class="w-4" src="../../assets/icons/arrow-left.svg" alt="" />
+          </button>
+          <h4 class="text-lg">Message Requests</h4>
+        </div>
+      </div>
+      <!-- message request -->
       <div
-        v-if="messageList"
-        class="flex justify-between mt-8 items-center w-full"
+        v-if="!openMessageRequest"
+        @click="openMessageRequest = true"
+        class="flex cursor-pointer justify-between mt-8 items-center w-full"
       >
         <div class="flex gap-3">
           <div
@@ -80,15 +98,92 @@ const addImages = (input: any) => {
           </div>
           <div class="w-full">
             <h5 class="text-md">Message requests</h5>
-            <p class="text-[#B3B3B3] font-light">2 pending requests</p>
+            <p class="text-[#B3B3B3] font-light">
+              {{ messageRequestList?.length }} pending requests
+            </p>
           </div>
         </div>
         <div class="">
           <img class="w-5" src="../../assets/icons/arrow-right.svg" alt="" />
         </div>
       </div>
+      <!-- messages list  -->
+      <div v-if="messageList && !openMessageRequest">
+        <div v-for="(message, index) in messageList" class="" :key="index">
+          <div
+            @click="selectedChat = message"
+            :class="[
+              selectedChat?.username === message.username
+                ? 'border-l border-primary bg-[#F2F2F2]'
+                : '',
+            ]"
+            class="flex justify-between cursor-pointer flex-wrap mt-6 p-2 items-start w-full"
+          >
+            <div class="flex gap-3">
+              <div class="w-14 h-12 rounded-full">
+                <img
+                  class="w-full h-12 rounded-full"
+                  :src="message.avatar"
+                  alt=""
+                />
+              </div>
+              <div class="w-full">
+                <h5 class="text-md">{{ message.username }}</h5>
+                <p class="text-neutral font-light text-sm">
+                  Received successful...
+                </p>
+              </div>
+            </div>
+            <div class="">
+              <p class="text-neutral font-light text-xs">
+                {{ message.createdAt }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Request messages list  -->
+      <div v-if="messageRequestList && openMessageRequest">
+        <div
+          v-for="(message, index) in messageRequestList"
+          class=""
+          :key="index"
+        >
+          <div
+            @click="selectedChat = message"
+            :class="[
+              selectedChat?.username === message.username
+                ? 'border-l border-primary bg-[#F2F2F2]'
+                : '',
+            ]"
+            class="flex justify-between cursor-pointer flex-wrap mt-6 p-2 items-start w-full"
+          >
+            <div class="flex gap-3">
+              <div class="w-14 h-12 rounded-full">
+                <img
+                  class="w-full h-12 rounded-full"
+                  :src="message.avatar"
+                  alt=""
+                />
+              </div>
+              <div class="w-full">
+                <h5 class="text-md">{{ message.username }}</h5>
+                <p class="text-neutral font-light text-sm">
+                  Received successful...
+                </p>
+              </div>
+            </div>
+            <div class="">
+              <p class="text-neutral font-light text-xs">
+                {{ message.createdAt }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- empty messages screen  -->
       <div
-        v-else
+        v-if="!messageList && !openMessageRequest"
         class="flex flex-col items-center justify-center h-[75vh] my-4"
       >
         <div class="text-center">
@@ -100,39 +195,6 @@ const addImages = (input: any) => {
             />
           </div>
           <p class="text-md text-[#4D4D4D] font-medium">No Conversation yet</p>
-        </div>
-      </div>
-
-      <div v-for="(message, index) in messageList" class="" :key="index">
-        <div
-          @click="selectedChat = message"
-          :class="[
-            selectedChat?.username === message.username
-              ? 'border-l border-primary bg-[#F2F2F2]'
-              : '',
-          ]"
-          class="flex justify-between cursor-pointer flex-wrap mt-6 p-2 items-start w-full"
-        >
-          <div class="flex gap-3">
-            <div class="w-14 h-12 rounded-full">
-              <img
-                class="w-full h-12 rounded-full"
-                :src="message.avatar"
-                alt=""
-              />
-            </div>
-            <div class="w-full">
-              <h5 class="text-md">{{ message.username }}</h5>
-              <p class="text-neutral font-light text-sm">
-                Received successful...
-              </p>
-            </div>
-          </div>
-          <div class="">
-            <p class="text-neutral font-light text-xs">
-              {{ message.createdAt }}
-            </p>
-          </div>
         </div>
       </div>
     </section>
