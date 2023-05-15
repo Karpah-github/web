@@ -6,6 +6,7 @@ export const messageList = [
     message:
       "Hi there! I'm interested in the Salsa African Dress you're selling. Can you tell me more about it?",
     createdAt: "Mar 3, 2023",
+    status: "accepted",
   },
   {
     avatar:
@@ -14,6 +15,7 @@ export const messageList = [
     message:
       "Great, I think I'm a size medium. Do you have any measurements for the dress?",
     createdAt: "Mar 3, 2023",
+    status: "accepted",
   },
   {
     avatar:
@@ -21,6 +23,7 @@ export const messageList = [
     username: "Fisherman Mike",
     message: "Thanks for the information! How much are you selling it for?",
     createdAt: "Mar 3, 2023",
+    status: "accepted",
   },
   {
     avatar:
@@ -28,6 +31,7 @@ export const messageList = [
     username: "Femi Adeoye",
     message: "ordered for African Classy dress",
     createdAt: "Mar 3, 2023",
+    status: "accepted",
   },
 ];
 
@@ -39,6 +43,7 @@ export const messageRequestList = [
     message:
       "Hi there! I'm interested in the Salsa African Dress you're selling. Can you tell me more about it?",
     createdAt: "Mar 3, 2023",
+    status: "request",
   },
   {
     avatar:
@@ -47,5 +52,6 @@ export const messageRequestList = [
     message:
       "Great, I think I'm a size medium. Do you have any measurements for the dress?",
     createdAt: "Mar 3, 2023",
+    status: "request",
   },
 ];
