@@ -53,12 +53,18 @@ const addImages = (input: any) => {
   }
 };
 const openMessageRequest = ref(false);
+const showConversationMobile = ref(false);
+const openConversation = (message: any) => {
+  selectedChat.value = message;
+  showConversationMobile.value = true;
+};
 </script>
 
 <template>
   <div class="md:flex w-full h-screen">
     <section
       class="md:w-4/12 overflow-y-scroll px-4 md:border-r md:border-neutral-border"
+      :class="[showConversationMobile === false ? 'block' : 'hidden md:block']"
     >
       <!-- Messages title and searchbar -->
       <div class="" v-if="!openMessageRequest">
@@ -111,7 +117,7 @@ const openMessageRequest = ref(false);
       <div v-if="messageList && !openMessageRequest">
         <div v-for="(message, index) in messageList" class="" :key="index">
           <div
-            @click="selectedChat = message"
+            @click="openConversation(message)"
             :class="[
               selectedChat?.username === message.username
                 ? 'border-l border-primary bg-[#F2F2F2]'
@@ -150,7 +156,7 @@ const openMessageRequest = ref(false);
           :key="index"
         >
           <div
-            @click="selectedChat = message"
+            @click="openConversation(message)"
             :class="[
               selectedChat?.username === message.username
                 ? 'border-l border-primary bg-[#F2F2F2]'
@@ -198,10 +204,13 @@ const openMessageRequest = ref(false);
         </div>
       </div>
     </section>
-    <section class="hidden md:block md:w-8/12 overflow-y-scroll">
+    <section
+      class="md:w-8/12 overflow-y-scroll"
+      :class="[showConversationMobile === true ? 'block' : 'hidden md:block']"
+    >
       <div
         v-if="!selectedChat && !messageList"
-        class="flex flex-col items-center justify-center h-[75vh] my-4"
+        class="flex flex-col items-center px-4 justify-center h-[75vh] my-4"
       >
         <div class="text-center">
           <div class="w-32 mx-auto mb-6">
@@ -222,7 +231,7 @@ const openMessageRequest = ref(false);
       </div>
       <div
         v-if="!selectedChat && messageList"
-        class="flex flex-col items-center justify-center h-[80vh] my-4"
+        class="flex flex-col items-center px-4 justify-center h-[80vh] my-4 overflow-y-hidden"
       >
         <div class="text-center">
           <h5 class="font-medium text-[#4D4D4D] text-md mb-1">
@@ -237,9 +246,19 @@ const openMessageRequest = ref(false);
       <div v-if="selectedChat" class="flex flex-col justify-between gap-4">
         <div class="">
           <div
-            class="w-full p-3 flex justify-between items-center border-b border-neutral-border"
+            class="w-full px-4 pb-3 mb-4 flex justify-between items-center border-b border-neutral-border"
           >
             <div class="flex gap-2 items-center">
+              <span
+                class="block md:hidden cursor-pointer"
+                @click="showConversationMobile = false"
+              >
+                <img
+                  class="w-5"
+                  src="../../assets/icons/arrow-left-1.svg"
+                  alt=""
+                />
+              </span>
               <span
                 class="bg-[#212121] text-white uppercase text-sm rounded-full w-8 h-8 flex justify-center items-center"
                 >{{ selectedChat?.username.charAt(0) }}</span
@@ -250,14 +269,14 @@ const openMessageRequest = ref(false);
               <img src="../../assets/icons/more.svg" alt="more icon" />
             </div>
           </div>
-          <div class="my-2 px-4 h-[80vh]">
+          <div class="my-2 px-4 h-[75vh]">
             <p class="text-center text-sm text-neutral my-3 font-light">
               27 March, 2023
             </p>
             <div
               v-for="(chat, index) in allChats"
               :key="index"
-              class="w-3/4"
+              class="w-full md:w-3/4"
               :class="[chat.from === userId ? 'float-right' : '']"
             >
               <div
@@ -301,9 +320,9 @@ const openMessageRequest = ref(false);
             </div>
           </div>
         </div>
-        <div v-if="selectedChat.status === 'accepted'" class="px-4 mb-4">
+        <div v-if="selectedChat.status === 'accepted'" class="px-4">
           <div class="message-input w-full">
-            <label htmlFor="image" className="w-10 cursor-pointer">
+            <label htmlFor="image" className="w-8 mt-1 cursor-pointer">
               <input
                 type="file"
                 accept="image/jpeg, image/png, image/jpg"
@@ -318,7 +337,7 @@ const openMessageRequest = ref(false);
               />
             </label>
 
-            <span class="w-10">
+            <span class="w-8">
               <img
                 class="svg-neutral-1"
                 src="../../assets/icons/emoji-happy.svg"
@@ -332,7 +351,7 @@ const openMessageRequest = ref(false);
               id=""
               v-model="message"
               @keyup.enter="sendMessage"
-              class="w-full outline-none"
+              class="w-full outline-none ml-1"
             />
 
             <span
@@ -346,7 +365,7 @@ const openMessageRequest = ref(false);
             </span>
           </div>
         </div>
-        <div class="accept-request-box mx-4 py-10 mb-4">
+        <div v-else class="accept-request-box mx-4 py-10 mb-4">
           <h6 class="text-[#4D4D4D] text-md">
             {{ selectedChat.username }} wants to send you a message
           </h6>
@@ -375,8 +394,10 @@ const openMessageRequest = ref(false);
     0px 2px 4px -2px rgba(16, 24, 40, 0.1);
   border-radius: 4px;
   background-color: #fff;
-  padding: 12px;
+  padding: 10px;
   display: flex;
+  align-items: center;
+  gap: 4px;
   input[type="text"] {
     word-wrap: break-word;
     word-break: break-all;
