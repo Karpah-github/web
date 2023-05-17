@@ -1,0 +1,13 @@
+[
+    {
+        "_id": "5c8a211f2",
+        "name": "Juliet George",
+        "email": "juliet@karpah.com",
+        "phone":{
+            "countryCode": "1",
+            "phoneNumber": "202-555-0157"
+        },
+        "country": "United States",
+        "address_id": "5c8a201e2f"
+    }
+]

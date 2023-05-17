@@ -4,13 +4,14 @@ const { Schema, model } = mongoose;
 interface UserAttr {
     name: string;
     email: string;
-    phone_number: string;
+    phone: string;
     country: string;
+    role: string;
     address_id: any;
 
 }
 
-const customerSchema = new Schema<UserAttr>({
+const userSchema = new Schema<UserAttr>({
     name:{
         type: String,
         required: true
@@ -19,9 +20,16 @@ const customerSchema = new Schema<UserAttr>({
         type: String,
         required: true
     },
-    phone_number:{
-        type: String,
-        required: true
+    phone:{
+        countryCode: {type: String, required: true },
+        phoneNumber: {type: String, required: true}
+
+    },
+    role:{
+        type: String, 
+        required: true, 
+        default: 'user',
+        enum: ["user", "shop-admin", "shop-owner"]
     },
     country:{
         type: String,
@@ -32,5 +40,5 @@ const customerSchema = new Schema<UserAttr>({
     },
 })
 
-const Customer = model('Customer', customerSchema);
-export { Customer }
+const User = model('User', userSchema);
+export { User }

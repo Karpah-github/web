@@ -1,5 +1,6 @@
 import express from "express";
 import bodyParser from "body-parser";
+import dotenv from "dotenv";
 import cors from "cors";
 import mongoose from "mongoose";
 import redis from "redis";
@@ -10,9 +11,12 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
+const PORT = process.env.PORT || 3000;
+const databaseURI = keys.mongoURI.replace("<password>", keys.mongoPassword);
+
 const start = async () => {
   try {
-    await mongoose.connect(keys.mongoURI);
+    await mongoose.connect(databaseURI);
     console.log("connecting to database");
   } catch (err) {
     console.log(err);
@@ -29,6 +33,6 @@ const connectRedis = async () => {
   }
 };
 
-app.listen(3000, () => {
-  console.log("listening on port 3000");
+app.listen(PORT, () => {
+  console.log("listening on port ", PORT);
 });
