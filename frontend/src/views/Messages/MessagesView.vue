@@ -248,7 +248,7 @@ const openConversation = (message: any) => {
           <div
             class="w-full px-4 pb-3 mb-4 flex justify-between items-center border-b border-neutral-border"
           >
-            <div class="flex gap-2 items-center">
+            <div class="flex gap-2 items-center mt-2">
               <span
                 class="block md:hidden cursor-pointer"
                 @click="showConversationMobile = false"
