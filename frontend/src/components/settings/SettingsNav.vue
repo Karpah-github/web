@@ -29,11 +29,11 @@ const changeUploadScreen = (view: string) => {
       </li>
       <li
         class="flex gap-1 md:gap-2 md:text-xs text-sm items-center"
-        @click="changeUploadScreen('Account')"
+        @click="changeUploadScreen('account')"
       >
         <span
           :class="[
-            { 'text-primary border-b border-primary': screen === 'Account' },
+            { 'text-primary border-b border-primary': screen === 'account' },
           ]"
           >Account</span
         >
