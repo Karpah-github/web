@@ -1,1 +1,1 @@
-export const currencies = ["naira", "cedis", "USD", "Euro", "CAD", "GBP"];
+export const currencies = ["NAIRA", "CEDI", "USD", "Euro", "CAD", "GBP"];
