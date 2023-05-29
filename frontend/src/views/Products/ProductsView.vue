@@ -4,7 +4,7 @@
       <h1 class="">Products</h1>
       <div class="flex gap-4 cursor-pointer items-center">
         <div
-          class="bg-[#F2F2F2] p-2 gap-2 hidden md:flex items-center rounded-sm"
+          class="bg-neutral-bg p-2 gap-2 hidden md:flex items-center rounded-sm"
         >
           <button
             @click="changeView('grid')"
@@ -108,7 +108,7 @@
         <table class="table-auto w-full">
           <thead class="table__header">
             <tr
-              class="product_table__row uppercase text-left text-[#333333] bg-[#F2F2F2]"
+              class="product_table__row uppercase text-left text-[#333333] bg-neutral-bg"
             >
               <th class="font-medium pl-2 text-sm py-3">Product</th>
               <th class="font-medium text-sm py-2 text-left">Upload Date</th>

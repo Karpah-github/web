@@ -17,17 +17,17 @@ const props = defineProps([
       :class="showActionsModal === id ? 'show' : ''"
     >
       <ul class="flex flex-col gap-2 font-light pt-1">
-        <li class="hover:bg-[#F2F2F2] px-4 py-1 text-[#333333] text-sm">
+        <li class="hover:bg-neutral-bg px-4 py-1 text-[#333333] text-sm">
           Edit product
         </li>
         <li
-          class="hover:bg-[#F2F2F2] px-4 py-1 text-[#333333] text-sm"
+          class="hover:bg-neutral-bg px-4 py-1 text-[#333333] text-sm"
           @click="props.showHideModal(id)"
         >
           Hide product
         </li>
         <li
-          class="hover:bg-[#F2F2F2] px-4 py-1 text-[#E72B3B] text-sm"
+          class="hover:bg-neutral-bg px-4 py-1 text-[#E72B3B] text-sm"
           @click="props.showDeleteModal(id)"
         >
           Delete
