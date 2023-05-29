@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import AccountSettings from "@/components/settings/AccountSettings.vue";
 import PasswordSettings from "@/components/settings/PasswordSettings.vue";
+import PayoutSettings from "@/components/settings/PayoutSettings.vue";
 import SettingsNav from "@/components/settings/SettingsNav.vue";
 import StoreSettings from "@/components/settings/StoreSettings.vue";
 import { storeInfo } from "@/composables/settings/SettingsDetails";
@@ -55,6 +56,7 @@ const account = ref({
       :email="account.email"
       :update:page="updatePage"
     />
+    <PayoutSettings v-show="page === 'payout'" :update:page="updatePage" />
   </div>
 </template>
 
