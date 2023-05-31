@@ -40,11 +40,11 @@ const changeUploadScreen = (view: string) => {
       </li>
       <li
         class="flex gap-1 md:gap-2 md:text-xs text-sm items-center"
-        @click="changeUploadScreen('Branding')"
+        @click="changeUploadScreen('branding')"
       >
         <span
           :class="[
-            { 'text-primary border-b border-primary': screen === 'Branding' },
+            { 'text-primary border-b border-primary': screen === 'branding' },
           ]"
           >Branding</span
         >

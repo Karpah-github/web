@@ -24,7 +24,7 @@ const payoutHistory = ref([
 </script>
 
 <template>
-  <div class="md:w-10/12">
+  <div class="md:9/12 lg:w-8/12">
     <h5 class="header6 text-xl pb-8">Payout</h5>
     <div class="mb-3">
       <h6 class="text-md">Payout information</h6>

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import AccountSettings from "@/components/settings/AccountSettings.vue";
+import BrandingSettings from "@/components/settings/BrandingSettings.vue";
 import PasswordSettings from "@/components/settings/PasswordSettings.vue";
 import PayoutSettings from "@/components/settings/PayoutSettings.vue";
 import SettingsNav from "@/components/settings/SettingsNav.vue";
@@ -25,6 +26,11 @@ const account = ref({
   fullname: "",
   email: "",
   avatar: "",
+});
+const branding = ref({
+  displayPicture: "",
+  pageBanner: "",
+  sizeGuide: "",
 });
 </script>
 
@@ -57,6 +63,13 @@ const account = ref({
       :update:page="updatePage"
     />
     <PayoutSettings v-show="page === 'payout'" :update:page="updatePage" />
+    <BrandingSettings
+      v-show="page === 'branding'"
+      :display-picture="branding.displayPicture"
+      :page-banner="branding.pageBanner"
+      :size-guide="branding.sizeGuide"
+      :update:page="updatePage"
+    />
   </div>
 </template>
 
