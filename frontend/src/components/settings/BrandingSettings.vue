@@ -178,12 +178,58 @@
           Change
         </button>
       </div>
+      <div class="form-input pt-6">
+        <label for="country">Store Highlights</label>
+        <p class="text-neutral text-sm font-light pb-1">
+          Add picture highlights to your store for people to see
+        </p>
+        <div
+          v-for="highlight in highlights"
+          :key="highlight.id"
+          class="flex items-center justify-between rounded-md border border-neutral-border p-3 my-3"
+        >
+          <div class="flex items-center gap-2">
+            <div
+              class="w-16 h-16 bg-[#ECECEC] rounded-sm flex justify-center items-center"
+            >
+              <img
+                class="svg-mid-neutral w-8"
+                src="../../assets/icons/add.svg"
+                alt=""
+              />
+            </div>
+            <div class="font-light">
+              <h6 class="text-dark">Add highlight</h6>
+            </div>
+          </div>
+          <button
+            @click="openUploadHighlight(highlight.id)"
+            class="btn-secondary p-2"
+          >
+            Add
+          </button>
+          <UploadHighlight
+            :open="openHighlightModal"
+            :close="openUploadHighlight"
+            :highlight-modal="highlightModal"
+            :highlight="highlight"
+          />
+        </div>
+        <button
+          class="flex text-primary gap-1 py-5 items-center"
+          type="button"
+          @click="addStoreHighlight"
+        >
+          <img class="svg-primary" src="../../assets/icons/add.svg" alt="" />
+          <span class="text-lg">Add highlight</span>
+        </button>
+      </div>
     </form>
   </div>
 </template>
 <script setup lang="ts">
 import { ref } from "vue";
-
+import UploadHighlight from "@/components/modals/UploadHighlight.vue";
 // eslint-disable-next-line no-undef
 defineProps({
   pageBanner: String,
@@ -198,10 +244,9 @@ defineEmits([
   "update:sizeGuide",
   "update:page",
 ]);
+// Add store display image
 const displayImage = ref<any>("");
-// productInfo.value.displayImage = displayImage.value;
 const addDisplayImage = (input: any) => {
-  console.log(";;");
   const pict = input.target.files;
   for (let i = 0; i < pict.length; i++) {
     const reader = new FileReader();
@@ -211,9 +256,8 @@ const addDisplayImage = (input: any) => {
     };
     reader.readAsDataURL(pict[i]);
   }
-
-  //   emit("update:displayPicture", input.target.file);
 };
+// Add store banner
 const banner = ref<any>("");
 const addBanner = (input: any) => {
   const files = input.target.files;
@@ -225,8 +269,8 @@ const addBanner = (input: any) => {
     };
     reader.readAsDataURL(files[i]);
   }
-  //   emit("update:displayPicture", input.target.file);
 };
+// Add size guide file
 class UploadableFile {
   file: any;
   id: string;
@@ -247,6 +291,32 @@ const addSizeGuide = (input: any) => {
     (file) => new UploadableFile(file)
   );
   sizeGuides.value = newUploadableFiles;
+};
+// Add store highlights
+const highlights = ref<
+  Array<{ id: number; galleryName: string; images: Array<any> }>
+>([]);
+const id = ref(0);
+const addStoreHighlight = () => {
+  const highlight = ref<any>({
+    id: id.value++,
+    galleryName: "",
+    images: [],
+  });
+  const newp = highlights.value;
+  newp.push(highlight.value);
+  highlights.value = newp;
+};
+// Open upload highlight modal
+const openHighlightModal = ref(false);
+const highlightModal = ref();
+const openUploadHighlight = (x: number) => {
+  openHighlightModal.value = !openHighlightModal.value;
+  if (highlightModal.value === x) {
+    highlightModal.value = "";
+  } else {
+    highlightModal.value = x;
+  }
 };
 </script>
 
@@ -283,5 +353,13 @@ const addSizeGuide = (input: any) => {
 }
 input[type="file"] {
   display: none;
+}
+.svg-mid-neutral {
+  filter: invert(76%) sepia(0%) saturate(539%) hue-rotate(190deg)
+    brightness(98%) contrast(82%);
+}
+.svg-primary {
+  filter: invert(62%) sepia(56%) saturate(388%) hue-rotate(348deg)
+    brightness(88%) contrast(90%);
 }
 </style>
