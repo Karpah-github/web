@@ -11,6 +11,7 @@ module.exports = {
         "dark-light": "#323259",
         neutral: "#828282",
         "neutral-border": "#DFDFDF",
+        "neutral-bg": "#F2F2F2",
       },
     },
   },

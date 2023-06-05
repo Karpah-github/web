@@ -120,7 +120,7 @@ const openConversation = (message: any) => {
             @click="openConversation(message)"
             :class="[
               selectedChat?.username === message.username
-                ? 'border-l border-primary bg-[#F2F2F2]'
+                ? 'border-l border-primary bg-neutral-bg'
                 : '',
             ]"
             class="flex justify-between cursor-pointer flex-wrap mt-6 p-2 items-start w-full"
@@ -159,7 +159,7 @@ const openConversation = (message: any) => {
             @click="openConversation(message)"
             :class="[
               selectedChat?.username === message.username
-                ? 'border-l border-primary bg-[#F2F2F2]'
+                ? 'border-l border-primary bg-neutral-bg'
                 : '',
             ]"
             class="flex justify-between cursor-pointer flex-wrap mt-6 p-2 items-start w-full"
@@ -248,7 +248,7 @@ const openConversation = (message: any) => {
           <div
             class="w-full px-4 pb-3 mb-4 flex justify-between items-center border-b border-neutral-border"
           >
-            <div class="flex gap-2 items-center">
+            <div class="flex gap-2 items-center mt-2">
               <span
                 class="block md:hidden cursor-pointer"
                 @click="showConversationMobile = false"
@@ -295,7 +295,9 @@ const openConversation = (message: any) => {
                 <div
                   class="border border-[#ECECEC] w-[97%] rounded-md px-2 py-1 text-sm"
                   :class="[
-                    chat.from === userId ? 'border-[#F2F2F2] bg-[#FAFAFA]' : '',
+                    chat.from === userId
+                      ? 'border-neutral-bg bg-[#FAFAFA]'
+                      : '',
                   ]"
                 >
                   <p class="text-[#4D4D4D]">{{ chat.userMessage }}</p>

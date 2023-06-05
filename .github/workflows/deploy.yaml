@@ -1,0 +1,29 @@
+name: deploy Karpah Client
+on:
+  pull_request:
+    branches:
+      - main
+      - dev
+
+jobs:
+  docker-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Login to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{secrets.DOCKER_USERNAME}}
+          password: ${{secrets.DOCKER_PASSWORD}}
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+      - name: Build and export to Docker
+        uses: docker/build-push-action@v4
+        with:
+          context: ./frontend
+          file: ./frontend/Dockerfile.dev
+          load: true
+          tags: julietkarpah/frontend-unit
+      - name: Unit Test
+        run: |
+          docker run -e CI=true julietkarpah/frontend-unit npm run test:unit

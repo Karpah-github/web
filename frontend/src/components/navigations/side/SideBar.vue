@@ -41,7 +41,7 @@
           <router-link to="/products"> Products </router-link>
           <router-link to="/messages"> Messages </router-link>
           <!-- <router-link to="/analytics"> Analytics </router-link> -->
-          <!-- <router-link to="/settings"> Settings </router-link> -->
+          <router-link to="/settings"> Settings </router-link>
         </ul>
         <nav>
           <div class="flex w-full -mb-3 mt-5 text-white dark:text-white">

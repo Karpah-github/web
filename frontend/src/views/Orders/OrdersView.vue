@@ -85,7 +85,7 @@
         <table class="table-auto w-full">
           <thead class="table__header">
             <tr
-              class="table__row uppercase text-left text-[#333333] bg-[#F2F2F2]"
+              class="table__row uppercase text-left text-[#333333] bg-neutral-bg"
             >
               <th class="font-medium pl-2 text-sm py-3">
                 <div class="w-5 h-5 bg-neutral-border rounded-sm"></div>
@@ -102,7 +102,7 @@
 
           <tbody>
             <tr
-              class="table__row text-[#333333] hover:bg-[#F2F2F2]"
+              class="table__row text-[#333333] hover:bg-neutral-bg"
               v-for="(order, index) in filteredOrders"
               :key="index"
             >
