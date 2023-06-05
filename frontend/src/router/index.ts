@@ -85,11 +85,54 @@ const routes: Array<RouteRecordRaw> = [
       ),
   },
   {
+    path: "/auth/signup",
+    meta: { layout: AuthLayout },
+    name: "signup",
+    component: () =>
+      import(/* webpackChunkName: "sigin page" */ "../views/Auth/SignUp.vue"),
+  },
+  {
     path: "/auth/signin",
     meta: { layout: AuthLayout },
     name: "signin",
     component: () =>
-      import(/* webpackChunkName: "sigin page" */ "../views/Auth/SignUp.vue"),
+      import(/* webpackChunkName: "sigin page" */ "../views/Auth/SignIn.vue"),
+  },
+  {
+    path: "/auth/verify-email",
+    meta: { layout: AuthLayout },
+    name: "verify-email",
+    component: () =>
+      import(
+        /* webpackChunkName: "sigin page" */ "../views/Auth/VerifyEmail.vue"
+      ),
+  },
+  {
+    path: "/auth/forgot-password",
+    meta: { layout: AuthLayout },
+    name: "forgot-password",
+    component: () =>
+      import(
+        /* webpackChunkName: "sigin page" */ "../views/Auth/ForgotPassword.vue"
+      ),
+  },
+  {
+    path: "/auth/check-email",
+    meta: { layout: AuthLayout },
+    name: "check-email",
+    component: () =>
+      import(
+        /* webpackChunkName: "sigin page" */ "../views/Auth/CheckEmail.vue"
+      ),
+  },
+  {
+    path: "/auth/password-reset-verification",
+    meta: { layout: AuthLayout },
+    name: "password-reset-verification",
+    component: () =>
+      import(
+        /* webpackChunkName: "sigin page" */ "../views/Auth/AwaitVerification.vue"
+      ),
   },
 ];
 
