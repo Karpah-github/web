@@ -13,7 +13,7 @@ const signUpData = ref({
 
 <template>
   <div class="flex">
-    <div class="bg-[#FAF4EE] px-5 hidden md:block md:w-6/12 py-8">
+    <div class="bg-[#FAF4EE] px-5 hidden md:block md:w-5/12 py-8">
       <div class="">
         <img class="w-32" src="../../assets/Karpah.svg" alt="" />
       </div>
@@ -21,19 +21,19 @@ const signUpData = ref({
         Global stage for your fashion. Sell your designs worldwide on our
         marketplace
       </h6>
-      <div class="w-5/6">
+      <div class="">
         <img src="../../assets/signup.svg" alt="signup illustration" />
       </div>
     </div>
-    <div class="px-8 py-8">
-      <div class="mb-4 md:w-8/12 mx-auto">
-        <h6 class="text-dark text-xl mb-2">Welcome to Karpah</h6>
+    <div class="px-8 md:w-6/12 py-8">
+      <div class="mb-4 md:w-9/12 mx-auto">
+        <h6 class="text-dark text-xl mb-2 font-semibold">Welcome to Karpah</h6>
         <p class="font-light text-[#4D4D4D]">
           Unlock your potential as a fashion designer. We connects you with a
           global audience and helps you grow your brand
         </p>
       </div>
-      <form class="md:w-8/12 mx-auto my-8">
+      <form class="md:w-9/12 mx-auto my-8">
         <div class="form-input2">
           <span class="flex gap-1">
             <label for="email">Email address</label>
@@ -104,16 +104,16 @@ const signUpData = ref({
           />
           <label for="cutome-wear">Yes, I’m willing to do custom wear </label>
         </div>
-        <button class="btn-primary w-full mt-8 py-2">Create account</button>
+        <button class="btn-primary w-full mt-4 py-2">Create account</button>
       </form>
-      <div class="flex gap-1 justify-center items-center mb-6">
+      <div class="flex gap-1 justify-center items-center mb-4">
         <p class="text-neutral">Already have an account?</p>
         <router-link to="/auth/signin" class="text-dark underline"
           >Log in</router-link
         >
       </div>
       <div
-        class="mb-5 w-5/12 text-sm mx-auto text-center font-light text-neutral"
+        class="mb-3 md:w-6/12 text-sm mx-auto text-center font-light text-neutral"
       >
         <span>
           By signing up, you agree to our
