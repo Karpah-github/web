@@ -59,6 +59,22 @@ const routes: Array<RouteRecordRaw> = [
         /* webpackChunkName: "store activities" */ "../views/Activity/ActivityView.vue"
       ),
   },
+  {
+    path: "/messages",
+    name: "messages",
+    component: () =>
+      import(
+        /* webpackChunkName: "store activities" */ "../views/Messages/MessagesView.vue"
+      ),
+  },
+  {
+    path: "/settings",
+    name: "settings",
+    component: () =>
+      import(
+        /* webpackChunkName: "store activities" */ "../views/Settings/SettingsView.vue"
+      ),
+  },
 ];
 
 const router = createRouter({

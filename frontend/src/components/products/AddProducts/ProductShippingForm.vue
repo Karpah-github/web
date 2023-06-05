@@ -18,7 +18,7 @@
             <input
               type="text"
               name="bust"
-              class="w-full"
+              class="w-full outline-none"
               :value="productWeight"
               @input="
                 $emit(
@@ -45,7 +45,7 @@
             <input
               type="text"
               name="bust"
-              class="w-full"
+              class="w-full outline-none"
               :value="productHeight"
               @input="
                 $emit(

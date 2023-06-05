@@ -15,7 +15,7 @@ const router = useRouter();
     </div>
     <p class="text-uppercase mt-6">Today</p>
     <div
-      class="flex flex-col md:flex-row gap-2 justify-between w-full border-b border-[#DFDFDF] py-5"
+      class="flex flex-col md:flex-row gap-2 justify-between w-full border-b border-neutral-border py-5"
     >
       <div class="flex gap-2 items-start">
         <img src="../../assets/avatar.svg" class="w-12" alt="avatar" />
@@ -29,7 +29,7 @@ const router = useRouter();
       <p class="text-[#B3B3B3] text-sm">March 24, 2023 at 4:43PM</p>
     </div>
     <div
-      class="flex flex-col md:flex-row gap-2 justify-between w-full border-b border-[#DFDFDF] py-5"
+      class="flex flex-col md:flex-row gap-2 justify-between w-full border-b border-neutral-border py-5"
     >
       <div class="flex gap-2 items-start">
         <img src="../../assets/avatar.svg" class="w-12" alt="avatar" />
@@ -43,7 +43,7 @@ const router = useRouter();
       <p class="text-[#B3B3B3] text-sm">March 24, 2023 at 4:43PM</p>
     </div>
     <div
-      class="flex flex-col md:flex-row gap-2 justify-between w-full border-b border-[#DFDFDF] py-5"
+      class="flex flex-col md:flex-row gap-2 justify-between w-full border-b border-neutral-border py-5"
     >
       <div class="flex gap-2 items-start">
         <img src="../../assets/avatar.svg" class="w-12" alt="avatar" />
@@ -70,7 +70,7 @@ const router = useRouter();
     </div>
     <p class="text-uppercase mt-6">March 2, 2023</p>
     <div
-      class="flex flex-col md:flex-row gap-2 justify-between w-full border-b border-[#DFDFDF] py-5"
+      class="flex flex-col md:flex-row gap-2 justify-between w-full border-b border-neutral-border py-5"
     >
       <div class="flex gap-2 items-start">
         <img src="../../assets/avatar.svg" class="w-12" alt="avatar" />

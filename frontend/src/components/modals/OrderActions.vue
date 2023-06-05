@@ -18,14 +18,14 @@ const props = defineProps([
       <ul class="flex flex-col gap-2 font-light pt-1">
         <li
           @click="props.showOrderDetails(id)"
-          class="hover:bg-[#F2F2F2] px-4 py-1 text-[#333333] text-md"
+          class="hover:bg-neutral-bg px-4 py-1 text-[#333333] text-md"
         >
           View Order
         </li>
-        <li class="hover:bg-[#F2F2F2] px-4 py-1 text-[#333333] text-md">
+        <li class="hover:bg-neutral-bg px-4 py-1 text-[#333333] text-md">
           Message Buyer
         </li>
-        <li class="hover:bg-[#F2F2F2] px-4 py-1 text-[#E72B3B] text-md">
+        <li class="hover:bg-neutral-bg px-4 py-1 text-[#E72B3B] text-md">
           Report
         </li>
       </ul>

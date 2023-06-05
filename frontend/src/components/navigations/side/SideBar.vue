@@ -2,7 +2,7 @@
   <div class="" id="sidebar" data-testid="sidebarOpenTest">
     <transition name="slide" appear>
       <aside
-        class="aside flex flex-col justify-between gap-4 px-4 py-8 h-screen md:border-r border-[#DFDFDF]"
+        class="aside flex flex-col justify-between gap-4 px-4 py-8 h-screen md:border-r border-neutral-border"
       >
         <ul class="flex flex-col gap-4">
           <div class="md:mb-6 w-full flex justify-between items-center">
@@ -39,9 +39,9 @@
           <router-link to="/overview"> Overview </router-link>
           <router-link to="/orders"> Orders </router-link>
           <router-link to="/products"> Products </router-link>
-          <!-- <router-link to="/messages"> Messages </router-link> -->
+          <router-link to="/messages"> Messages </router-link>
           <!-- <router-link to="/analytics"> Analytics </router-link> -->
-          <!-- <router-link to="/settings"> Settings </router-link> -->
+          <router-link to="/settings"> Settings </router-link>
         </ul>
         <nav>
           <div class="flex w-full -mb-3 mt-5 text-white dark:text-white">

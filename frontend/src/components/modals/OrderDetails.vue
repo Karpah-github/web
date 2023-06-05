@@ -60,7 +60,7 @@ const showMoreDetails = (x: number) => {
         :key="index"
         index
       >
-        <div class="border border-[#dfdfdf] p-3 rounded-md">
+        <div class="border border-neutral-border p-3 rounded-md">
           <div class="flex justify-between items-start">
             <div class="flex gap-3">
               <div class="w-24">
@@ -108,13 +108,13 @@ const showMoreDetails = (x: number) => {
             </button>
           </div>
           <div class="" v-if="moreDetails === index">
-            <div class="border-y border-[#F2F2F2] py-5 mt-4">
+            <div class="border-y border-neutral-bg py-5 mt-4">
               <h6 class="uppercase text-md font-light tracking-widest pb-2">
                 description
               </h6>
               <p class="text-sm">{{ product.description }}</p>
             </div>
-            <div class="border-b border-[#F2F2F2] py-5">
+            <div class="border-b border-neutral-bg py-5">
               <h6 class="uppercase text-md font-light tracking-widest pb-2">
                 measurements
               </h6>
@@ -137,11 +137,11 @@ const showMoreDetails = (x: number) => {
                 </li>
               </ul>
             </div>
-            <div class="border-b border-[#F2F2F2] py-5">
+            <div class="border-b border-neutral-bg py-5">
               <h6 class="uppercase text-md font-light tracking-widest pb-2">
                 Size
               </h6>
-              <p class="text-sm bg-[#F2F2F2] py-2 w-20 text-center rounded-sm">
+              <p class="text-sm bg-neutral-bg py-2 w-20 text-center rounded-sm">
                 {{ product.size }}
               </p>
               <h6
@@ -149,11 +149,11 @@ const showMoreDetails = (x: number) => {
               >
                 material
               </h6>
-              <p class="text-sm bg-[#F2F2F2] py-2 w-32 text-center rounded-sm">
+              <p class="text-sm bg-neutral-bg py-2 w-32 text-center rounded-sm">
                 {{ product.material }}
               </p>
             </div>
-            <div class="border-b border-[#F2F2F2] py-5">
+            <div class="border-b border-neutral-bg py-5">
               <h6 class="uppercase text-md font-light tracking-widest pb-2">
                 personal note
               </h6>
@@ -164,7 +164,7 @@ const showMoreDetails = (x: number) => {
       </div>
       <h4 class="text-xl pt-4 pb-3 mt-2">Customer details</h4>
       <div
-        class="flex justify-between items-center pb-6 border-b border-[#dfdfdf]"
+        class="flex justify-between items-center pb-6 border-b border-neutral-border"
       >
         <div class="flex gap-2 items-center">
           <span
@@ -185,7 +185,7 @@ const showMoreDetails = (x: number) => {
         </button>
       </div>
       <div class="md:flex justify-between py-6">
-        <div class="md:w-5/12 border-b border-[#dfdfdf] md:border-none">
+        <div class="md:w-5/12 border-b border-neutral-border md:border-none">
           <h4 class="text-xl pb-3">Shipping Details</h4>
           <p class="text-neutral text-sm font-light">Address</p>
           <p class="text-neutral text-sm pb-4 font-light">
@@ -213,7 +213,9 @@ const showMoreDetails = (x: number) => {
               <p class="text-neutral text-sm">Tax</p>
               <p class="text-dark test-sm">₦‎129.00</p>
             </li>
-            <li class="flex justify-between pt-2 border-t border-[#dfdfdf]">
+            <li
+              class="flex justify-between pt-2 border-t border-neutral-border"
+            >
               <p class="text-neutral text-sm">Total</p>
               <p class="text-dark test-sm">₦‎1129.00</p>
             </li>
