@@ -1,12 +1,12 @@
 <template>
-  <DefaultLayout>
+  <component :is="$route.meta.layout || 'div'">
     <router-view />
-  </DefaultLayout>
+  </component>
 </template>
 
 <script setup lang="ts">
 // import "./assets/scss/_mixin.scss";
-import DefaultLayout from "./layouts/DefaultLayout.vue";
+// import DefaultLayout from "./layouts/DefaultLayout.vue";
 </script>
 
 <style></style>
