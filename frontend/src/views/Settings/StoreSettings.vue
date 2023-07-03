@@ -16,10 +16,7 @@
           class="form-field"
           type="text"
           name="store-name"
-          :value="storeName"
-          @input="
-            $emit('update:storeName', ($event.target as HTMLInputElement).value)
-          "
+          v-model="store.name"
           required
         />
       </div>
@@ -31,10 +28,7 @@
           id="storeBio"
           cols="30"
           rows="10"
-          :value="storeBio"
-          @input="
-            $emit('update:storeBio', ($event.target as HTMLInputElement).value)
-          "
+          v-model="store.bio"
         ></textarea>
       </div>
       <div class="form-input mt-10">
@@ -44,10 +38,7 @@
         </p>
         <select
           name="country"
-          :value="country"
-          @input="
-            $emit('update:country', ($event.target as HTMLInputElement).value)
-          "
+          v-model="store.country"
           class="form-field"
           id="country"
         >
@@ -68,10 +59,7 @@
         </p>
         <select
           name="currency"
-          :value="country"
-          @input="
-            $emit('update:currency', ($event.target as HTMLInputElement).value)
-          "
+          v-model="store.currency"
           class="form-field"
           id="currency"
         >
@@ -89,24 +77,17 @@
   </div>
 </template>
 <script setup lang="ts">
+import { storeInfo } from "@/composables/settings/SettingsDetails";
 import { Countries } from "../../composables/countries";
 import { currencies } from "../../composables/currencies";
+import { Ref, ref } from "vue";
 // eslint-disable-next-line no-undef
-defineProps({
-  storeName: String,
-  storeBio: String,
-  currency: Number,
-  country: String,
-  page: String,
+const store: Ref<storeInfo> = ref({
+  name: "",
+  bio: "",
+  currency: "",
+  country: "",
 });
-// eslint-disable-next-line no-undef
-defineEmits([
-  "update:storeName",
-  "update:storeBio",
-  "update:country",
-  "update:currency",
-  "update:page",
-]);
 </script>
 
 <style lang="scss" scoped></style>

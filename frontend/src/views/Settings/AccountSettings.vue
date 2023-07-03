@@ -16,10 +16,7 @@
           class="form-field"
           type="text"
           name="fullname"
-          :value="fullName"
-          @input="
-            $emit('update:fullName', ($event.target as HTMLInputElement).value)
-          "
+          v-model="account.fullname"
           required
         />
       </div>
@@ -29,10 +26,7 @@
           class="form-field"
           type="text"
           name="email"
-          :value="email"
-          @input="
-            $emit('update:email', ($event.target as HTMLInputElement).value)
-          "
+          v-model="account.email"
           id="email"
         />
       </div>
@@ -46,7 +40,7 @@
             <input
               type="file"
               required
-              :value="avatar"
+              :value="account.avatar"
               accept="image/jpeg, image/png, image/jpg"
               @change="addImages"
               name="image"
@@ -91,19 +85,11 @@
 import { ref } from "vue";
 
 // eslint-disable-next-line no-undef
-defineProps({
-  fullName: String,
-  email: String,
-  page: String,
-  avatar: String,
+const account = ref({
+  fullname: "",
+  email: "",
+  avatar: "",
 });
-// eslint-disable-next-line no-undef
-defineEmits([
-  "update:fullName",
-  "update:avatar",
-  "update:email",
-  "update:page",
-]);
 const images = ref<any>("");
 // productInfo.value.images = images.value;
 const addImages = (input: any) => {
