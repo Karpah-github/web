@@ -2,6 +2,7 @@ import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import AuthLayout from "@/layouts/AuthLayout.vue";
 import DefaultLayout from "@/layouts/DefaultLayout.vue";
+import store from "@/store";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -72,16 +73,68 @@ const routes: Array<RouteRecordRaw> = [
     name: "messages",
     component: () =>
       import(
-        /* webpackChunkName: "store activities" */ "../views/Messages/MessagesView.vue"
+        /* webpackChunkName: "messages" */ "../views/Messages/MessagesView.vue"
       ),
   },
   {
     path: "/settings",
     name: "settings",
     meta: { layout: DefaultLayout },
+    redirect: { name: "store" },
     component: () =>
       import(
-        /* webpackChunkName: "store activities" */ "../views/Settings/SettingsView.vue"
+        /* webpackChunkName: "settings" */ "../views/Settings/SettingsView.vue"
+      ),
+    children: [
+      {
+        path: "store",
+        name: "store",
+        component: () =>
+          import(
+            /* webpackChunkName: "store settings" */ "../views/Settings/StoreSettings.vue"
+          ),
+      },
+      {
+        path: "account",
+        name: "account",
+        component: () =>
+          import(
+            /* webpackChunkName: "account settings" */ "../views/Settings/AccountSettings.vue"
+          ),
+      },
+      {
+        path: "branding",
+        name: "branding",
+        component: () =>
+          import(
+            /* webpackChunkName: "branding settings" */ "../views/Settings/BrandSettings.vue"
+          ),
+      },
+      {
+        path: "payout",
+        name: "payout",
+        component: () =>
+          import(
+            /* webpackChunkName: "payout settings" */ "../views/Settings/PayoutSettings.vue"
+          ),
+      },
+      {
+        path: "password",
+        name: "password",
+        component: () =>
+          import(
+            /* webpackChunkName: "password settings" */ "../views/Settings/PasswordSettings.vue"
+          ),
+      },
+    ],
+  },
+  {
+    path: "/get-started",
+    name: "getStarted",
+    meta: { layout: DefaultLayout },
+    component: () =>
+      import(
+        /* webpackChunkName: "store activities" */ "../views/GetStarted/GetStarted.vue"
       ),
   },
   {

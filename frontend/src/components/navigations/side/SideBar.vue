@@ -42,6 +42,8 @@
           <router-link to="/messages"> Messages </router-link>
           <!-- <router-link to="/analytics"> Analytics </router-link> -->
           <router-link to="/settings"> Settings </router-link>
+          <div class="w-full h-[1px] bg-neutral-bg"></div>
+          <router-link to="/get-started">Get Started </router-link>
         </ul>
         <nav>
           <div class="flex w-full -mb-3 mt-5 text-white dark:text-white">
