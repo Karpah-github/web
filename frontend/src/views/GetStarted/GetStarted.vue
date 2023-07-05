@@ -19,28 +19,40 @@ if (
 <template>
   <div class="px-6 md:px-8 py-10 lg:w-8/12 mx-auto">
     <div
-      class="bg-neutral-bg p-3 py-2 items-center flex justify-between rounded-lg"
+      class="bg-neutral-bg px-1 md:px-3 py-2 items-center flex justify-between rounded-lg"
     >
       <div class="flex gap-2">
         <span
           class="hidden md:flex rounded-full justify-center items-center w-6 h-6 bg-primary text-white"
           >!</span
         >
-        <p class="text-[#4d4d4d] text-sm">
+        <p class="text-[#4d4d4d] text-xs md:text-sm">
           Learn how to effectively setup your shop
         </p>
       </div>
-      <button class="btn-secondary px-4 py-2 rounded-md">
+      <button
+        class="bg-white text-[8px] px-1 md:text-[14px] md:px-4 py-2 rounded-md"
+      >
         Watch Tutorials
       </button>
     </div>
     <div class="mt-10 text-center">
       <h5 class="header5">Getting started with Karpah</h5>
-      <p class="font-light text-md py-1 text-neutral">
+      <p class="font-light text-sm md:text-md py-1 text-neutral">
         Complete the following to showcase your products and start growing your
         business.
       </p>
-      <div class="flex justify-between items-center mt-8"></div>
+      <div class="flex justify-between items-center my-10">
+        <div class="bg-neutral-border rounded-xl h-2 w-1/2">
+          <div
+            class="bg-primary h-2 rounded-xl"
+            :class="[createStore ? 'w-[20%]' : 'w-[0%]']"
+          ></div>
+        </div>
+        <p class="text-dark font-light text-xs md:text-sm">
+          1 of 5 steps completed
+        </p>
+      </div>
       <div class="flex flex-col gap-12">
         <div class="flex justify-between items-center">
           <div class="flex items-center gap-4">
