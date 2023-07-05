@@ -8,6 +8,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
     name: "home",
+    meta: { layout: DefaultLayout },
     component: HomeView,
   },
   {
@@ -71,6 +72,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/messages",
     name: "messages",
+    meta: { layout: DefaultLayout },
     component: () =>
       import(
         /* webpackChunkName: "messages" */ "../views/Messages/MessagesView.vue"

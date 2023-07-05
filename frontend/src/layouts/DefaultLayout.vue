@@ -42,6 +42,9 @@
                 alt=""
               />
             </div>
+            <router-link class="text-dark text-md" to="/"
+              >Community</router-link
+            >
             <button class="btn-secondary py-2 px-4">View Shop</button>
             <div class="">
               <NotificationCard
