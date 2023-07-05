@@ -36,6 +36,7 @@
               <button class="btn-secondary w-full py-2">View Shop</button>
             </div>
           </div>
+          <router-link to="/">Home </router-link>
           <router-link to="/overview"> Overview </router-link>
           <router-link to="/orders"> Orders </router-link>
           <router-link to="/products"> Products </router-link>
@@ -44,6 +45,9 @@
           <router-link to="/settings"> Settings </router-link>
           <div class="w-full h-[1px] bg-neutral-bg"></div>
           <router-link to="/get-started">Get Started </router-link>
+          <router-link class="text-dark text-md md:hidden" to="/"
+            >Community</router-link
+          >
         </ul>
         <nav>
           <div class="flex w-full -mb-3 mt-5 text-white dark:text-white">
