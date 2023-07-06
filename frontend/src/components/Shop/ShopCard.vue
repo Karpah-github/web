@@ -16,7 +16,7 @@ const props = defineProps(["name", "brand", "img", "readTime"]);
         <i class="text-[#B3B3B3] text-sm">{{ props.brand }}</i>
       </div>
       <div class="w-16 h-16">
-        <img class="rounded-lg w-full" src="../../assets/brand.png" alt="" />
+        <img class="rounded-md w-full" src="../../assets/brand.png" alt="" />
       </div>
     </div>
     <button class="btn-secondary mt-4 w-full text-center py-2">
