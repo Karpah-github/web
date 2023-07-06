@@ -59,11 +59,13 @@ const shopContent = ref<Array<any>>([
       class="flex justify-between gap-8 bg-[#FAF4EE] items-center px-6 py-8 flex-col-reverse md:flex-row"
     >
       <div class="md:w-6/12">
-        <h1 class="home-heading text-dark">
+        <h3 class="home-heading text-dark">
           Unleash Your Entrepreneurial Spirit: Sell Your Products on Our Vibrant
           African Marketplace
-        </h1>
-        <button class="mt-5 px-6 py-3 text-md font-medium btn-primary">
+        </h3>
+        <button
+          class="mt-4 px-6 py-3 text-md w-full md:w-36 font-medium btn-primary"
+        >
           Start Selling
         </button>
       </div>
@@ -74,7 +76,7 @@ const shopContent = ref<Array<any>>([
     <div class="my-5">
       <div class="flex py-8 justify-between text-dark items-center">
         <p class="text-sm font-medium">Latest from karpah</p>
-        <button class="text-sm">Show all</button>
+        <!-- <button class="text-sm">Show all</button> -->
       </div>
       <div class="flex gap-10 flex-wrap">
         <div v-for="post in blogContent" :key="post.id">
@@ -106,5 +108,8 @@ const shopContent = ref<Array<any>>([
   font-family: "Bebas Neue";
   font-style: normal;
   font-weight: 400;
+  @include sm {
+    font-size: 18px;
+  }
 }
 </style>
