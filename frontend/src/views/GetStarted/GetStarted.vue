@@ -17,7 +17,7 @@ if (
 </script>
 
 <template>
-  <div class="px-6 md:px-8 py-10 lg:w-8/12 mx-auto">
+  <div class="px-4 md:px-8 py-10 lg:w-8/12 mx-auto">
     <div
       class="bg-neutral-bg px-1 md:px-3 py-2 items-center flex justify-between rounded-lg"
     >
@@ -55,7 +55,7 @@ if (
       </div>
       <div class="flex flex-col gap-12">
         <div class="flex justify-between items-center">
-          <div class="flex items-center gap-4">
+          <div class="flex items-center gap-2 md:gap-4">
             <span
               class="flex rounded-full justify-center items-center w-10 h-10"
               :class="
@@ -69,7 +69,7 @@ if (
               <p class="font-medium text-sm md:text-md text-dark">
                 Create your store
               </p>
-              <p class="text-sm font-light text-neutral">
+              <p class="text-xs md:text-sm font-light text-neutral">
                 Add more details about your store
               </p>
             </div>
@@ -83,12 +83,12 @@ if (
           <router-link
             to="/settings/store"
             v-else
-            class="btn-secondary py-2 px-4"
+            class="btn-secondary flex justify-center py-2 w-24"
             >Complete</router-link
           >
         </div>
         <div class="flex justify-between items-center">
-          <div class="flex items-center gap-4">
+          <div class="flex items-center gap-2 md:gap-4">
             <span
               class="flex rounded-full justify-center items-center w-10 h-10"
               :class="
@@ -99,8 +99,10 @@ if (
               >2</span
             >
             <div class="text-left">
-              <p class="font-medium text-md text-dark">Brand your store</p>
-              <p class="text-sm font-light text-neutral">
+              <p class="font-medium text-sm md:text-md text-dark">
+                Brand your store
+              </p>
+              <p class="text-xs md:text-sm font-light text-neutral">
                 Give your store front a branded look
               </p>
             </div>
@@ -114,12 +116,12 @@ if (
           <router-link
             to="/settings/branding"
             v-else
-            class="btn-secondary py-2 px-4"
+            class="btn-secondary flex justify-center py-2 w-24"
             >Setup</router-link
           >
         </div>
         <div class="flex justify-between items-center">
-          <div class="flex items-center gap-4">
+          <div class="flex items-center gap-2 md:gap-4">
             <span
               class="flex rounded-full justify-center items-center w-10 h-10"
               :class="
@@ -133,8 +135,9 @@ if (
               <p class="font-medium text-sm md:text-md text-dark">
                 Connect your bank account
               </p>
-              <p class="text-sm font-light text-neutral">
-                Add a payout bank account to receive money
+              <p class="text-xs md:text-sm font-light text-neutral">
+                Add a payout bank account to <br />
+                receive money
               </p>
             </div>
           </div>
@@ -147,12 +150,12 @@ if (
           <router-link
             to="/settings/payout"
             v-else
-            class="btn-secondary py-2 px-4"
+            class="btn-secondary flex justify-center py-2 w-24"
             >Connect</router-link
           >
         </div>
         <div class="flex justify-between items-center">
-          <div class="flex items-center gap-4">
+          <div class="flex items-center gap-2 md:gap-4">
             <span
               class="flex rounded-full justify-center items-center w-10 h-10"
               :class="
@@ -166,7 +169,7 @@ if (
               <p class="font-medium text-sm md:text-md text-dark">
                 Add your products
               </p>
-              <p class="text-sm font-light text-neutral">
+              <p class="text-xs md:text-sm font-light text-neutral">
                 Start listing your products to karpah
               </p>
             </div>
@@ -177,12 +180,15 @@ if (
           >
             <img class="w-full" src="../../assets/icons/Checkmark.svg" alt="" />
           </span>
-          <router-link to="/add-product" v-else class="btn-secondary py-2 px-4"
+          <router-link
+            to="/add-product"
+            v-else
+            class="btn-secondary flex justify-center py-2 w-24"
             >Add</router-link
           >
         </div>
         <div class="flex justify-between items-center">
-          <div class="flex items-center gap-4">
+          <div class="flex items-center gap-2 md:gap-4">
             <span
               class="flex rounded-full justify-center items-center w-10 h-10"
               :class="
@@ -192,12 +198,12 @@ if (
               "
               >5</span
             >
-            <div class="text-left">
+            <div class="text-left w-8/12">
               <p class="font-medium text-sm md:text-md text-dark">
                 Launch your store
               </p>
-              <p class="text-sm font-light text-neutral">
-                Lorem ipsum dolor sit amet consectetur.
+              <p class="text-xs md:text-sm font-light text-neutral">
+                Lorem ipsum dolor sit consectetur.
               </p>
             </div>
           </div>
@@ -210,7 +216,7 @@ if (
           <button
             v-else
             :disabled="!launchStore"
-            class="btn-secondary py-2 px-4"
+            class="btn-secondary flex justify-center py-2 w-24"
           >
             Launch
           </button>
