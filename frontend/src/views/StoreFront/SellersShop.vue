@@ -36,7 +36,9 @@ const showProducts = (x: string) => {
         <img class="" src="../../assets/Karpah.svg" alt="" />
       </div>
       <div class="flex gap-8 items-center">
-        <!-- <router-link class="text-dark text-md" to="/">Community</router-link> -->
+        <router-link class="text-dark text-md hidden md:block" to="/"
+          >Community</router-link
+        >
         <button class="btn-primary py-2 px-4 text-sm md:text-md">
           Your Shop
         </button>
