@@ -35,7 +35,7 @@
                 alt=""
               />
             </div>
-            <router-link class="text-dark text-md" to="/"
+            <router-link class="text-dark text-md" to="/community"
               >Community</router-link
             >
             <router-link to="/shop" class="btn-secondary py-2 px-4"

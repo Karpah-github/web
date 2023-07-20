@@ -12,6 +12,53 @@ const routes: Array<RouteRecordRaw> = [
     component: HomeView,
   },
   {
+    path: "/community",
+    name: "community",
+    component: () => import("../views/Community/HomeScreen.vue"),
+    children: [
+      {
+        path: "top",
+        name: "top",
+        component: () =>
+          import(
+            /* webpackChunkName: "store settings" */ "../views/Community/TopTopics.vue"
+          ),
+      },
+      {
+        path: "categories",
+        name: "categories",
+        component: () =>
+          import(
+            /* webpackChunkName: "account settings" */ "../views/Community/CommunityCategories.vue"
+          ),
+      },
+      {
+        path: "new",
+        name: "new",
+        component: () =>
+          import(
+            /* webpackChunkName: "branding settings" */ "../views/Community/NewTopics.vue"
+          ),
+      },
+      {
+        path: "payout",
+        name: "payout",
+        component: () =>
+          import(
+            /* webpackChunkName: "payout settings" */ "../views/Settings/PayoutSettings.vue"
+          ),
+      },
+      {
+        path: "password",
+        name: "password",
+        component: () =>
+          import(
+            /* webpackChunkName: "password settings" */ "../views/Settings/PasswordSettings.vue"
+          ),
+      },
+    ],
+  },
+  {
     path: "/shop",
     name: "shop",
     component: () => import("../views/StoreFront/SellersShop.vue"),
