@@ -16,13 +16,7 @@
           class="form-field"
           type="text"
           name="old-password"
-          :value="oldPassword"
-          @input="
-            $emit(
-              'update:oldPassword',
-              ($event.target as HTMLInputElement).value
-            )
-          "
+          v-model="password.oldPassword"
           required
         />
       </div>
@@ -32,13 +26,7 @@
           class="form-field"
           type="text"
           name="new-password"
-          :value="newPassword"
-          @input="
-            $emit(
-              'update:newPassword',
-              ($event.target as HTMLInputElement).value
-            )
-          "
+          v-model="password.newPassword"
           id="new-password"
         />
       </div>
@@ -46,14 +34,13 @@
   </div>
 </template>
 <script setup lang="ts">
+import { ref } from "vue";
+
 // eslint-disable-next-line no-undef
-defineProps({
-  oldPassword: String,
-  newPassword: String,
-  page: String,
+const password = ref({
+  oldPassword: "",
+  newPassword: "",
 });
-// eslint-disable-next-line no-undef
-defineEmits(["update:oldPassword", "update:newPassword", "update:page"]);
 </script>
 
 <style lang="scss" scoped></style>

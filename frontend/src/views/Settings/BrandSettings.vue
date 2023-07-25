@@ -18,7 +18,7 @@
             <input
               type="file"
               required
-              :value="displayPicture"
+              :value="branding.displayPicture"
               accept="image/jpeg, image/png, image/jpg"
               @change="addDisplayImage"
               name="display-image"
@@ -86,7 +86,7 @@
             <input
               type="file"
               required
-              :value="pageBanner"
+              :value="branding.pageBanner"
               accept="image/jpeg, image/png, image/jpg"
               @change="addBanner"
               name="page-banner"
@@ -140,7 +140,7 @@
             <input
               type="file"
               required
-              :value="sizeGuide"
+              :value="branding.sizeGuide"
               accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
               @change="addSizeGuide"
               name="size-guide"
@@ -231,19 +231,11 @@
 import { ref } from "vue";
 import UploadHighlight from "@/components/modals/UploadHighlight.vue";
 // eslint-disable-next-line no-undef
-defineProps({
-  pageBanner: String,
-  sizeGuide: String,
-  page: String,
-  displayPicture: String,
+const branding = ref({
+  displayPicture: "",
+  pageBanner: "",
+  sizeGuide: "",
 });
-// eslint-disable-next-line no-undef
-defineEmits([
-  "update:pageBanner",
-  "update:displayPicture",
-  "update:sizeGuide",
-  "update:page",
-]);
 // Add store display image
 const displayImage = ref<any>("");
 const addDisplayImage = (input: any) => {

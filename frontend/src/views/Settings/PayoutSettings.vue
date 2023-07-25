@@ -1,11 +1,5 @@
 <script setup lang="ts">
 import { ref } from "vue";
-// eslint-disable-next-line no-undef
-defineProps({
-  page: String,
-});
-// eslint-disable-next-line no-undef
-defineEmits(["update:page"]);
 
 const payoutHistory = ref([
   {
