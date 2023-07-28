@@ -1,15 +1,11 @@
 <script lang="ts" setup>
 import { ref } from "vue";
 import modal from "./index.vue";
+import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+import CKEditor from "@ckeditor/ckeditor5-vue";
 import { defineProps } from "vue";
-import { productList } from "@/composables/products/products";
-const props = defineProps(["open", "close", "deleteProduct"]);
-const deleteProduct = (x: string) => {
-  productList.filter(function (item) {
-    return item.id !== x;
-  });
-  props.close();
-};
+const props = defineProps(["open", "close"]);
+
 const options = ref([
   {
     id: 0,
@@ -43,49 +39,69 @@ const options = ref([
   },
 ]);
 const category = ref("");
+const editorData = ref("<p>Write your discussion in detail here</p>");
+const editor = ClassicEditor;
+const onReady = (editor: any) => {
+  console.log("kemi");
+};
+const onChange = (data: any) => {
+  console.log(data);
+};
 </script>
 <template>
   <modal :open="props.open" :close="props.close" class="overflow-y-hidden">
     <div class="delete-modal text-left p-4">
       <div class="text-left">
-        <div
-          class="w-10 h-10 mt-2 mb-4 flex justify-center items-center rounded-full bg-[#FDF4F4]"
-        >
-          <img
-            class="svg-red w-5"
-            src="../../assets/icons/trash.svg"
-            alt="delete icon"
-          />
-        </div>
-        <h4 class="text-md font-medium mb-4">Create a new Topic</h4>
+        <h4 class="text-lg mb-2 font-medium mb-4">Create a new Topic</h4>
         <div class="">
-          <div class="form-input">
-            <label for="category">Select Category</label>
-            <select
-              name="category"
-              v-model="category"
-              class="form-field"
-              id="category"
-            >
-              <option
-                v-for="(option, index) in options"
-                :key="index"
-                :value="option.category"
+          <div
+            class="flex md:gap-5 flex-col md:items-center md:flex-row w-full"
+          >
+            <div class="form-input md:w-7/12">
+              <label class="font-medium" for="topic-title">Topic Title</label>
+              <input
+                class="form-field"
+                type="text"
+                name="topic-title"
+                id="topic-title"
+                placeholder="What is this discussion about"
+              />
+            </div>
+            <div class="form-input md:w-5/12">
+              <label class="font-medium" for="category">Select Category</label>
+              <select
+                name="category"
+                v-model="category"
+                class="form-field"
+                id="category"
               >
-                {{ option.category }}
-              </option>
-            </select>
+                <option value="none" selected disabled hidden>
+                  Select Category
+                </option>
+                <option
+                  v-for="(option, index) in options"
+                  :key="index"
+                  :value="option.category"
+                >
+                  {{ option.category }}
+                </option>
+              </select>
+            </div>
           </div>
+
+          <Ckeditor
+            :editor="editor"
+            v-model="editorData"
+            @ready="onReady"
+            @input="onChange"
+          ></Ckeditor>
         </div>
       </div>
       <div class="flex justify-end pt-5 gap-3">
         <button class="btn-secondary px-3 py-1" @click="props.close">
           Cancel
         </button>
-        <button
-          class="bg-primary text-white px-3 py-1 rounded-sm text-sm"
-          @click="deleteProduct"
-        >
+        <button class="bg-primary text-white px-3 py-1 rounded-sm text-sm">
           Add Topic
         </button>
       </div>
@@ -101,8 +117,8 @@ const category = ref("");
   transform: translate(-50%, -50%);
   z-index: 3;
   position: fixed;
-  width: 80%;
-  height: 60vh;
+  width: 85%;
+  /* height: 60vh; */
   cursor: pointer;
   border-radius: 8px;
   @include md {
