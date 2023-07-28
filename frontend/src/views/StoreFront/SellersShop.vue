@@ -49,18 +49,22 @@ const showProducts = (x: string) => {
     </div>
     <div class="flex my-6 flex-wrap gap-y-4 justify-between items-center">
       <div class="flex gap-3 items-center">
-        <div class="w-[150px] md:w-[240px] md:w-6/12">
+        <div class="w-[170px] md:w-[240px] md:w-6/12">
           <img class="rounded-md w-full" src="../../assets/brand.png" alt="" />
         </div>
         <div class="">
           <h5 class="text-lg md:text-2xl font-medium text-dark">
             Inks by Ojaymie
           </h5>
-          <p class="text-neutral py-2 text-sm font-light">
+          <p class="text-neutral py-2 text-xs md:text-sm font-light">
             Quality designs you’ll love
           </p>
-          <p class="text-neutral pb-4 text-sm font-light">Lagos, Nigeria</p>
-          <button class="btn-secondary px-4 py-2">Edit profile</button>
+          <p class="text-neutral pb-4 text-xs md:text-sm font-light">
+            Lagos, Nigeria
+          </p>
+          <button class="btn-secondary px-4 py-2 text-xs md:text-sm">
+            Edit profile
+          </button>
         </div>
       </div>
       <div class="md:w-5/12 pl-8 md:pl-0 pr-8">
