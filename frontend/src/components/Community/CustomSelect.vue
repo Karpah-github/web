@@ -39,7 +39,7 @@ const selected = ref({
   id: 0,
   category: "All Categories",
 });
-const selectCategory = (option) => {
+const selectCategory = (option: { id: number; category: string }) => {
   selected.value = option;
   open.value = false;
   //   $emit("input", option);
@@ -71,8 +71,6 @@ const selectCategory = (option) => {
   width: 100%;
   text-align: left;
   outline: none;
-  height: 47px;
-  line-height: 47px;
 }
 
 .custom-select .selected {
@@ -93,7 +91,7 @@ const selectCategory = (option) => {
 .custom-select .selected:after {
   position: absolute;
   content: "";
-  top: 28px;
+  top: 50%;
   right: 1em;
   width: 0;
   height: 0;

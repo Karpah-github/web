@@ -71,7 +71,7 @@ const showAddTopicModal = () => {
         <button class="btn-primary py-2 px-4 text-sm md:text-md">
           Sign up
         </button>
-        <button class="btn-primary py-2 px-4 text-sm md:text-md">Login</button>
+        <!-- <button class="btn-primary py-2 px-4 text-sm md:text-md">Login</button> -->
       </div>
     </div>
     <div
@@ -87,8 +87,8 @@ const showAddTopicModal = () => {
         <img class="md:w-[250px]" src="../../assets/community.png" alt="" />
       </div>
     </div>
-    <div class="px-8 py-10">
-      <div class="flex my-4 flex items-center justify-between">
+    <div class="px-8 py-8">
+      <div class="flex my-4 flex gap-5 items-center justify-between">
         <div class="flex gap-2">
           <CustomSelect />
         </div>
@@ -138,7 +138,9 @@ const showAddTopicModal = () => {
             class="product_table__row uppercase text-left text-[#333333] bg-neutral-bg"
           >
             <th class="font-medium pl-2 text-sm py-3">Topic</th>
-            <th class="font-medium pl-2 text-sm py-3 text-left"></th>
+            <th
+              class="font-medium pl-2 text-sm py-3 text-left hidden md:block"
+            ></th>
             <th class="font-medium text-sm py-2 pr-2 text-left">Replies</th>
             <th class="font-medium text-sm px-2 py-2 text-left">Activity</th>
           </tr>
@@ -151,9 +153,13 @@ const showAddTopicModal = () => {
             :key="topic.id"
           >
             <td class="table__image py-4 px-2">
-              <p>{{ topic.topic }}</p>
+              <p class="text-md font-medium">{{ topic.topic }}</p>
+              <p class="text-sm font-light py-1">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Laboriosam...
+              </p>
             </td>
-            <td class="table__date py-4 px-2">
+            <td class="table__date py-4 px-2 hidden md:block">
               <div class="flex gap-2 w-10 md:w-full items-center">
                 <img
                   class="w-8 h-8 rounded-full border border-primary"
