@@ -40,23 +40,15 @@ const routes: Array<RouteRecordRaw> = [
             /* webpackChunkName: "branding settings" */ "../views/Community/NewTopics.vue"
           ),
       },
-      {
-        path: "payout",
-        name: "payout",
-        component: () =>
-          import(
-            /* webpackChunkName: "payout settings" */ "../views/Settings/PayoutSettings.vue"
-          ),
-      },
-      {
-        path: "password",
-        name: "password",
-        component: () =>
-          import(
-            /* webpackChunkName: "password settings" */ "../views/Settings/PasswordSettings.vue"
-          ),
-      },
     ],
+  },
+  {
+    path: "/community/:topic",
+    name: "topic",
+    component: () =>
+      import(
+        /* webpackChunkName: "topics" */ "../views/Community/_TopicScreen.vue"
+      ),
   },
   {
     path: "/shop",

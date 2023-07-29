@@ -153,11 +153,13 @@ const showAddTopicModal = () => {
             :key="topic.id"
           >
             <td class="table__image py-4 px-2">
-              <p class="text-md font-medium">{{ topic.topic }}</p>
-              <p class="text-sm font-light py-1">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Laboriosam...
-              </p>
+              <router-link :to="`/community/${topic.topic}`">
+                <p class="text-md font-medium">{{ topic.topic }}</p>
+                <p class="text-sm font-light py-1">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Laboriosam...
+                </p>
+              </router-link>
             </td>
             <td class="table__date py-4 px-2 hidden md:block">
               <div class="flex gap-2 w-10 md:w-full items-center">
