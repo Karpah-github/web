@@ -26,7 +26,11 @@
         <div class="border-b border-bg-neutral">
           <div class="flex justify-between">
             <div class="flex gap-4 items-center">
-              <img class="w-10" src="../../assets/avatar.svg" alt="avatar" />
+              <img
+                class="w-10 rounded-full h-10 flex items-center"
+                src="../../assets/avatar.svg"
+                alt="avatar"
+              />
               <p class="font-medium text-sm">Raji Adeoye</p>
               <p class="font-medium text-sm text-neutral">
                 (Community Manager)
@@ -46,6 +50,25 @@
               organized and that conversations stay constructive. Please make
               sure to take a moment to read them!
             </p>
+            <div class="flex gap-4 my-4 items-center">
+              <div>
+                <img
+                  class="w-4"
+                  src="../../assets/icons/message-circle-01.svg"
+                  alt=""
+                />
+              </div>
+              <div class="flex gap-1 items-center">
+                <img class="w-4" src="../../assets/icons/heart.svg" alt="" />
+                <span>3</span>
+              </div>
+              <div>
+                <img class="w-4" src="../../assets/icons/link-03.svg" alt="" />
+              </div>
+              <div>
+                <img class="w-4" src="../../assets/icons/bookmark.svg" alt="" />
+              </div>
+            </div>
             <div
               class="border border-neutral rounded-md p-3 my-4 flex gap-5 md:gap-10 flex-wrap"
             >
@@ -83,13 +106,17 @@
             </div>
           </div>
         </div>
-        <div class="my-4">
+        <div class="my-4 border-b border-bg-neutral">
           <div class="flex justify-between">
             <div class="flex gap-4 items-center">
-              <img class="w-10" src="../../assets/avatar.svg" alt="avatar" />
-              <p class="font-medium text-sm">Raji Adeoye</p>
+              <img
+                class="w-10 rounded-full h-10 flex items-center"
+                src="../../assets/sellerAvatar.png"
+                alt="avatar"
+              />
+              <p class="font-medium text-sm">Jane Adeoye</p>
             </div>
-            <p>Jan' 21</p>
+            <p>March' 21</p>
           </div>
           <div class="py-3 md:pl-12 w-10/12">
             <p class="">
@@ -97,6 +124,130 @@
               case is to allow users to programmatically create variations of an
               image designed in Figma.
             </p>
+            <div class="flex gap-4 my-4 items-center">
+              <div>
+                <img
+                  class="w-4"
+                  src="../../assets/icons/message-circle-01.svg"
+                  alt=""
+                />
+              </div>
+              <div class="flex gap-1 items-center">
+                <img class="w-4" src="../../assets/icons/heart.svg" alt="" />
+                <span>1</span>
+              </div>
+              <div>
+                <img class="w-4" src="../../assets/icons/link-03.svg" alt="" />
+              </div>
+              <div>
+                <img class="w-4" src="../../assets/icons/bookmark.svg" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="my-4 border-b border-bg-neutral">
+          <div class="flex justify-between">
+            <div class="flex gap-4 items-center">
+              <img class="w-10" src="../../assets/avatar.svg" alt="avatar" />
+              <p class="font-medium text-sm">Raji Adeoye</p>
+            </div>
+            <p>April' 21</p>
+          </div>
+          <div class="py-3 md:pl-12 w-10/12">
+            <p class="">
+              I would also like Outline Text as an argument in the API. Our use
+              case is to allow users to programmatically create variations of an
+              image designed in Figma.
+            </p>
+            <div class="flex gap-4 my-4 items-center">
+              <div>
+                <img
+                  class="w-4"
+                  src="../../assets/icons/message-circle-01.svg"
+                  alt=""
+                />
+              </div>
+              <div class="flex gap-1 items-center">
+                <img class="w-4" src="../../assets/icons/heart.svg" alt="" />
+                <span>1</span>
+              </div>
+              <div>
+                <img class="w-4" src="../../assets/icons/link-03.svg" alt="" />
+              </div>
+              <div>
+                <img class="w-4" src="../../assets/icons/bookmark.svg" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="my-4 border-b border-bg-neutral">
+          <div class="flex justify-between">
+            <div class="flex gap-4 items-center">
+              <img class="w-10" src="../../assets/avatar.svg" alt="avatar" />
+              <p class="font-medium text-sm">Raji Adeoye</p>
+            </div>
+            <p>May' 21</p>
+          </div>
+          <div class="py-3 md:pl-12 w-10/12">
+            <p class="">
+              I would also like Outline Text as an argument in the API. Our use
+              case is to allow users to programmatically create variations of an
+              image designed in Figma.
+            </p>
+            <div class="flex gap-4 my-4 items-center">
+              <div>
+                <img
+                  class="w-4"
+                  src="../../assets/icons/message-circle-01.svg"
+                  alt=""
+                />
+              </div>
+              <div class="flex gap-1 items-center">
+                <img class="w-4" src="../../assets/icons/heart.svg" alt="" />
+                <span>1</span>
+              </div>
+              <div>
+                <img class="w-4" src="../../assets/icons/link-03.svg" alt="" />
+              </div>
+              <div>
+                <img class="w-4" src="../../assets/icons/bookmark.svg" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="my-4">
+          <div class="flex justify-between">
+            <div class="flex gap-4 items-center">
+              <img class="w-10" src="../../assets/avatar.svg" alt="avatar" />
+              <p class="font-medium text-sm">Raji Adeoye</p>
+            </div>
+            <p>Aug' 21</p>
+          </div>
+          <div class="py-3 md:pl-12 w-10/12">
+            <p class="">
+              I would also like Outline Text as an argument in the API. Our use
+              case is to allow users to programmatically create variations of an
+              image designed in Figma.
+            </p>
+            <div class="flex gap-4 my-4 items-center">
+              <div>
+                <img
+                  class="w-4"
+                  src="../../assets/icons/message-circle-01.svg"
+                  alt=""
+                />
+              </div>
+              <div class="flex gap-1 items-center">
+                <img class="w-4" src="../../assets/icons/heart.svg" alt="" />
+                <span>1</span>
+              </div>
+              <div>
+                <img class="w-4" src="../../assets/icons/link-03.svg" alt="" />
+              </div>
+              <div>
+                <img class="w-4" src="../../assets/icons/bookmark.svg" alt="" />
+              </div>
+            </div>
           </div>
         </div>
       </section>
