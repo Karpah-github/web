@@ -1,4 +1,16 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import AddReply from "@/components/modals/AddReply.vue";
+import { ref } from "vue";
+
+const openAddReplyModal = ref(false);
+const showAddReplyModal = () => {
+  openAddReplyModal.value = !openAddReplyModal.value;
+};
+const liked = ref(false);
+const toggleLike = () => {
+  liked.value = !liked.value;
+};
+</script>
 
 <template>
   <div class="">
@@ -51,15 +63,26 @@
               sure to take a moment to read them!
             </p>
             <div class="flex gap-4 my-4 items-center">
-              <div>
+              <div @click="showAddReplyModal">
                 <img
-                  class="w-4"
+                  class="w-4 cursor-pointer"
                   src="../../assets/icons/message-circle-01.svg"
                   alt=""
                 />
               </div>
-              <div class="flex gap-1 items-center">
-                <img class="w-4" src="../../assets/icons/heart.svg" alt="" />
+              <div class="flex gap-1 items-center" @click="toggleLike">
+                <img
+                  v-if="liked"
+                  class="w-4"
+                  src="../../assets/icons/heart-filled.svg"
+                  alt=""
+                />
+                <img
+                  v-else
+                  class="w-4"
+                  src="../../assets/icons/heart.svg"
+                  alt=""
+                />
                 <span>3</span>
               </div>
               <div>
@@ -252,6 +275,7 @@
         </div>
       </section>
     </div>
+    <AddReply :open="openAddReplyModal" :close="showAddReplyModal" />
   </div>
 </template>
 
