@@ -49,27 +49,33 @@ const showProducts = (x: string) => {
     </div>
     <div class="flex my-6 flex-wrap gap-y-4 justify-between items-center">
       <div class="flex gap-3 items-center">
-        <div class="w-[150px] md:w-[240px] md:w-6/12">
+        <div class="w-[170px] md:w-[240px] md:w-6/12">
           <img class="rounded-md w-full" src="../../assets/brand.png" alt="" />
         </div>
         <div class="">
-          <h5 class="text-2xl font-medium text-dark">Inks by Ojaymie</h5>
-          <p class="text-neutral py-2 text-sm font-light">
+          <h5 class="text-lg md:text-2xl font-medium text-dark">
+            Inks by Ojaymie
+          </h5>
+          <p class="text-neutral py-2 text-xs md:text-sm font-light">
             Quality designs you’ll love
           </p>
-          <p class="text-neutral pb-4 text-sm font-light">Lagos, Nigeria</p>
-          <button class="btn-secondary px-4 py-2">Edit profile</button>
+          <p class="text-neutral pb-4 text-xs md:text-sm font-light">
+            Lagos, Nigeria
+          </p>
+          <button class="btn-secondary px-4 py-2 text-xs md:text-sm">
+            Edit profile
+          </button>
         </div>
       </div>
       <div class="md:w-5/12 pl-8 md:pl-0 pr-8">
-        <p class="text-neutral font-light text-md">
+        <p class="text-neutral font-light text-sm md:text-md py-2">
           Discover the perfect blend of style and quality at our fashion store.
           We offer a carefully curated collection of trendy clothing and
           accessories that will elevate your wardrobe. Experience exceptional
           customer service and find the latest fashion essentials to express
           your unique style.
         </p>
-        <div class="flex gap-5">
+        <div class="flex gap-5 justify-between">
           <div class="flex gap-4 items-center my-4">
             <img
               class="rounded-full w-10 h-10"
@@ -83,50 +89,53 @@ const showProducts = (x: string) => {
       </div>
     </div>
 
-    <div
-      class="flex flex-wrap px-8 py-4 gap-5 w-full md:justify-between items-center"
-    >
-      <div class="flex items-center gap-3">
-        <div class="">
-          <img
-            class="w-16 h-16 rounded-sm"
-            src="../../assets/image.png"
-            alt=""
-          />
+    <div class="">
+      <div
+        class="flex flex-row overflow-scroll md:overflow-hidden px-8 py-4 gap-5 w-full md:justify-between items-center"
+      >
+        <div class="flex items-center gap-3">
+          <div class="w-[90px] md:w-[60px]">
+            <img
+              class="w-16 h-16 rounded-md"
+              src="../../assets/image.png"
+              alt=""
+            />
+          </div>
+          <p class="text-dark text-xs md:text-sm">Customer Reviews</p>
         </div>
-        <p class="text-dark text-sm">Customer Reviews</p>
-      </div>
-      <div class="flex items-center gap-3">
-        <div class="">
-          <img
-            class="w-16 h-16 rounded-sm"
-            src="../../assets/sellerAvatar.png"
-            alt=""
-          />
+        <div class="flex items-center gap-3">
+          <div class="w-[90px] md:w-[60px]">
+            <img
+              class="w-16 h-16 rounded-md"
+              src="../../assets/sellerAvatar.png"
+              alt=""
+            />
+          </div>
+          <p class="text-dark text-xs md:text-sm">Customer Reviews</p>
         </div>
-        <p class="text-dark text-sm">Customer Reviews</p>
-      </div>
-      <div class="flex items-center gap-3">
-        <div class="">
-          <img
-            class="w-16 h-16 rounded-sm"
-            src="../../assets/image.png"
-            alt=""
-          />
+        <div class="flex items-center gap-3">
+          <div class="w-[90px] md:w-[60px]">
+            <img
+              class="w-16 h-16 rounded-md"
+              src="../../assets/image.png"
+              alt=""
+            />
+          </div>
+          <p class="text-dark text-xs md:text-sm">Latest Styles</p>
         </div>
-        <p class="text-dark text-sm">Latest Styles</p>
-      </div>
-      <div class="flex items-center gap-3">
-        <div class="">
-          <img
-            class="w-16 h-16 rounded-sm"
-            src="../../assets/sellerAvatar.png"
-            alt=""
-          />
+        <div class="flex items-center gap-3">
+          <div class="w-[90px] md:w-[60px]">
+            <img
+              class="w-16 h-16 rounded-md"
+              src="../../assets/sellerAvatar.png"
+              alt=""
+            />
+          </div>
+          <p class="text-dark text-xs md:text-sm">Customer Reviews</p>
         </div>
-        <p class="text-dark text-sm">Customer Reviews</p>
       </div>
     </div>
+
     <div class="mx-8 mt-8 border-t border-[#E6E6E6]">
       <div
         class="flex mb-4 text-xs md:text-sm text-[#B3B3B3] justify-between md:justify-center md:gap-8"

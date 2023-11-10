@@ -8,13 +8,13 @@
         alt=""
       />
     </div>
-    <div class="px-2 product-details py-3">
+    <div class="px-2 product-details py-3 flex justify-between items-center">
       <div class="flex justify-between items-center">
         <div class="">
-          <p class="text-md py-2">{{ props.name }}</p>
+          <p class="text-md py-1 font-light">{{ props.name }}</p>
         </div>
       </div>
-      <p class="text-md pb-2">₦‎{{ props.price }}.00</p>
+      <p class="text-md">₦‎{{ props.price }}.00</p>
     </div>
   </div>
 </template>
