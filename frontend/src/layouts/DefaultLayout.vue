@@ -35,10 +35,12 @@
                 alt=""
               />
             </div>
-            <router-link class="text-dark text-md" to="/"
+            <router-link class="text-dark text-md" to="/community"
               >Community</router-link
             >
-            <button class="btn-secondary py-2 px-4">View Shop</button>
+            <router-link to="/shop" class="btn-secondary py-2 px-4"
+              >View Shop</router-link
+            >
             <div class="">
               <NotificationCard
                 :open="openNotificationModal"

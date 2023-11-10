@@ -12,6 +12,50 @@ const routes: Array<RouteRecordRaw> = [
     component: HomeView,
   },
   {
+    path: "/community",
+    name: "community",
+    component: () => import("../views/Community/HomeScreen.vue"),
+    children: [
+      {
+        path: "top",
+        name: "top",
+        component: () =>
+          import(
+            /* webpackChunkName: "store settings" */ "../views/Community/TopTopics.vue"
+          ),
+      },
+      {
+        path: "categories",
+        name: "categories",
+        component: () =>
+          import(
+            /* webpackChunkName: "account settings" */ "../views/Community/CommunityCategories.vue"
+          ),
+      },
+      {
+        path: "new",
+        name: "new",
+        component: () =>
+          import(
+            /* webpackChunkName: "branding settings" */ "../views/Community/NewTopics.vue"
+          ),
+      },
+    ],
+  },
+  {
+    path: "/community/:topic",
+    name: "topic",
+    component: () =>
+      import(
+        /* webpackChunkName: "topics" */ "../views/Community/_TopicScreen.vue"
+      ),
+  },
+  {
+    path: "/shop",
+    name: "shop",
+    component: () => import("../views/StoreFront/SellersShop.vue"),
+  },
+  {
     path: "/overview",
     name: "overview",
     component: () => import("../views/OverviewScreen.vue"),
