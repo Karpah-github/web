@@ -60,8 +60,8 @@ const shopContent = ref<Array<any>>([
     >
       <div class="md:w-6/12">
         <h3 class="home-heading text-dark">
-          Unleash Your Entrepreneurial Spirit: Sell Your Products on Our Vibrant
-          African Marketplace
+          Unleash Your Style, Amplify Your Brand: Join Our Fashion Revolution
+          Where Creativity Meets Commerce!
         </h3>
         <button
           class="mt-4 px-6 py-3 text-md w-full md:w-36 font-medium btn-primary"
