@@ -60,7 +60,7 @@ const shopContent = ref<Array<any>>([
     >
       <div class="md:w-6/12">
         <h3 class="home-heading text-dark">
-          Unleash Your Style, Amplify Your Brand: Join Our Fashion Revolution, 
+          Unleash Your Style, Amplify Your Brand: Join Our Fashion Revolution 
           Where Creativity Meets Commerce!
         </h3>
         <button
