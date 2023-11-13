@@ -59,15 +59,16 @@ const shopContent = ref<Array<any>>([
       class="flex justify-between gap-8 bg-[#FAF4EE] items-center px-6 py-8 flex-col-reverse md:flex-row"
     >
       <div class="md:w-6/12">
-        <h3 class="home-heading text-dark">
+        <h3 class="home-heading text-dark mb-5">
           Unleash Your Style, Amplify Your Brand: Join Our Fashion Revolution
           Where Creativity Meets Commerce!
         </h3>
-        <button
-          class="mt-4 px-6 py-3 text-md w-full md:w-36 font-medium btn-primary"
+        <router-link
+          to="/settings/store"
+          class="px-6 py-3 text-md w-full md:w-36 font-medium btn-primary"
         >
           Start Selling
-        </button>
+        </router-link>
       </div>
       <div class="md:w-6/12">
         <img class="w-full" src="../assets/home-img.png" alt="" />
