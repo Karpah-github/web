@@ -135,9 +135,9 @@ const openConversation = (message: any) => {
               </div>
               <div class="w-full">
                 <h5 class="text-md">{{ message.username }}</h5>
-                <p class="text-neutral font-light text-sm">
+                <!-- <p class="text-neutral font-light text-sm">
                   Received successful...
-                </p>
+                </p> -->
               </div>
             </div>
             <div class="">
