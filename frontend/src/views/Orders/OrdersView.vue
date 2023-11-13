@@ -88,7 +88,12 @@
               class="table__row uppercase text-left text-[#333333] bg-neutral-bg"
             >
               <th class="font-medium pl-2 text-sm py-3">
-                <div class="w-5 h-5 bg-neutral-border rounded-sm"></div>
+                <input
+                  class="w-4 h-4 rounded-sm"
+                  type="checkbox"
+                  name=""
+                  id=""
+                />
               </th>
               <th class="font-medium text-sm py-2 text-left">order id</th>
               <th class="font-medium text-sm py-2 text-left">Customer name</th>
@@ -107,7 +112,13 @@
               :key="index"
             >
               <td class="table__box px-2 py-8">
-                <div class="w-5 h-5 bg-neutral-border rounded-sm"></div>
+                <input
+                  class="w-4 h-4 rounded-sm"
+                  type="checkbox"
+                  name=""
+                  id=""
+                />
+                <!-- <div class="w-5 h-5 bg-neutral-border rounded-sm"></div> -->
               </td>
               <td class="table__id">
                 <p class="text-sm w-32 lg:w-full">#{{ order.orderId }}</p>
