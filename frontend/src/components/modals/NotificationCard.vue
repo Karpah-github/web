@@ -10,8 +10,10 @@ const props = defineProps(["open", "close", "showNotificationModal"]);
       <div
         class="px-2 flex justify-between py-2 border-b border-neutral-border"
       >
-        <h3 class="font-medium">Notifications</h3>
-        <p class="text-neutral text-sm font-light">Mark all as read</p>
+        <h3 class="font-medium tex-[#333]">Notifications</h3>
+        <button @click="props.close" class="">
+          <img src="../../assets/icons/close.svg" alt="" />
+        </button>
       </div>
       <!-- <div class="flex items-center justify-center mt-20">
         <div class="text-center">
