@@ -68,9 +68,12 @@ const showAddTopicModal = () => {
         <img class="" src="../../assets/Karpah.svg" alt="" />
       </div>
       <div class="flex gap-4 items-center">
-        <button class="btn-primary py-2 px-4 text-sm md:text-md">
+        <router-link
+          to="/auth/signup"
+          class="btn-primary py-2 px-4 text-sm md:text-md"
+        >
           Sign up
-        </button>
+        </router-link>
         <!-- <button class="btn-primary py-2 px-4 text-sm md:text-md">Login</button> -->
       </div>
     </div>
@@ -107,11 +110,10 @@ const showAddTopicModal = () => {
         }"
       >
         <router-link
-          :to="{ name: 'community' }"
+          to="/community"
           class="flex gap-1 md:gap-2 text-sm items-center"
+          >Latest</router-link
         >
-          Latest
-        </router-link>
         <router-link
           :to="{ name: 'top' }"
           class="flex gap-1 md:gap-2 text-sm items-center"
@@ -208,8 +210,8 @@ const showAddTopicModal = () => {
   font-size: 14px;
   padding: 0.5em;
 }
-.page_nav a.router-link-active {
+/* .page_nav a.router-link-active {
   border-bottom: 1px solid #cc8f56;
   color: #cc8f56;
-}
+} */
 </style>
