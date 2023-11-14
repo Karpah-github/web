@@ -15,8 +15,8 @@ async def get_users():
     return [{"name":"Juliet"}, {"name": "John"}]
 
 
-@router.post("/")
-async def add_user(user: User):
+@router.post("/", )
+async def create_user(user: User):
     return user
 
 @router.get("/{user_id}")

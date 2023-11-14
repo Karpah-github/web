@@ -9,12 +9,14 @@ Server errors: 500–599
 from fastapi import FastAPI
 from app.routes import products, users
 
+
 app = FastAPI()
 
-#api.karpah.com
+# api.karpah.com
 
 app.include_router(products.router, prefix="/api/v1")
 app.include_router(users.router, prefix="/api/v1")
+
 
 @app.get("/")
 async def root():
