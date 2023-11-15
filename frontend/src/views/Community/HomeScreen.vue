@@ -9,48 +9,56 @@ const topics = ref([
   {
     id: 1,
     topic: "Welcome and Forum Guidelines",
+    slug: "welcome-and-forum-guidelines",
     replies: 98,
     date: "Jun 10",
   },
   {
     id: 2,
     topic: "Updates on the highlights feature",
+    slug: "Updates-on-the-highlights-feature",
     replies: 9,
     date: "Jun 10",
   },
   {
     id: 3,
     topic: "How to be a top seller",
+    slug: "How-to-be-a-top-seller",
     replies: 98,
     date: "Jun 10",
   },
   {
     id: 4,
     topic: "Karpah buyers algorithm",
+    slug: "Karpah-buyers-algorithm",
     replies: 198,
     date: "Jun 10",
   },
   {
     id: 5,
     topic: "Updates on the highlights feature",
+    slug: "Updates-on-the-highlights-feature",
     replies: 9,
     date: "Jun 10",
   },
   {
     id: 6,
     topic: "How to be a top seller",
+    slug: "How-to-be-a-top-seller",
     replies: 98,
     date: "Jun 10",
   },
   {
     id: 7,
     topic: "Karpah buyers algorithm",
+    slug: "Karpah-buyers-algorithm",
     replies: 198,
     date: "Jun 10",
   },
   {
     id: 8,
     topic: "Updates on the highlights feature",
+    slug: "Updates-on-the-highlights-feature",
     replies: 9,
     date: "Jun 10",
   },
@@ -87,7 +95,7 @@ const showAddTopicModal = () => {
         </h6>
       </div>
       <div class="hidden md:block">
-        <img class="md:w-[250px]" src="../../assets/community.png" alt="" />
+        <img class="md:w-[270px]" src="../../assets/community.png" alt="" />
       </div>
     </div>
     <div class="px-8 py-8">
@@ -155,7 +163,7 @@ const showAddTopicModal = () => {
             :key="topic.id"
           >
             <td class="table__image py-4 px-2">
-              <router-link :to="`/community/${topic.topic}`">
+              <router-link :to="`/community/${topic.slug}`">
                 <p class="text-md font-medium">{{ topic.topic }}</p>
                 <p class="text-sm font-light py-1">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.

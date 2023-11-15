@@ -126,9 +126,9 @@ const openConversation = (message: any) => {
             class="flex justify-between cursor-pointer flex-wrap mt-6 p-2 items-start w-full"
           >
             <div class="flex gap-3">
-              <div class="w-14 h-12 rounded-full">
+              <div class="">
                 <img
-                  class="w-full h-12 rounded-full"
+                  class="w-12 h-12 rounded-full object-contain"
                   :src="message.avatar"
                   alt=""
                 />
@@ -165,12 +165,8 @@ const openConversation = (message: any) => {
             class="flex justify-between cursor-pointer flex-wrap mt-6 p-2 items-start w-full"
           >
             <div class="flex gap-3">
-              <div class="w-14 h-12 rounded-full">
-                <img
-                  class="w-full h-12 rounded-full"
-                  :src="message.avatar"
-                  alt=""
-                />
+              <div class="w-12 h-12 rounded-full">
+                <img class="object-contain" :src="message.avatar" alt="" />
               </div>
               <div class="w-full">
                 <h5 class="text-md">{{ message.username }}</h5>

@@ -85,12 +85,12 @@ const toggleLike = () => {
                 />
                 <span>3</span>
               </div>
-              <div>
+              <!-- <div>
                 <img class="w-4" src="../../assets/icons/link-03.svg" alt="" />
               </div>
               <div>
                 <img class="w-4" src="../../assets/icons/bookmark.svg" alt="" />
-              </div>
+              </div> -->
             </div>
             <div
               class="border border-neutral rounded-md p-3 my-4 flex gap-5 md:gap-10 flex-wrap"
