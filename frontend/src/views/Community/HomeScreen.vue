@@ -2,6 +2,7 @@
 import { ref } from "vue";
 import CustomSelect from "@/components/Community/CustomSelect.vue";
 import AddTopic from "@/components/modals/AddTopic.vue";
+import { useRoute } from "vue-router";
 
 //show community navigation panel
 const showNav = ref(true);
@@ -67,6 +68,7 @@ const openAddTopicModal = ref(false);
 const showAddTopicModal = () => {
   openAddTopicModal.value = !openAddTopicModal.value;
 };
+const route = useRoute();
 </script>
 
 <template>
@@ -120,23 +122,43 @@ const showAddTopicModal = () => {
         <router-link
           to="/community"
           class="flex gap-1 md:gap-2 text-sm items-center"
+          :class="[
+            route.fullPath === '/community'
+              ? 'text-primary border-b border-primary'
+              : '',
+          ]"
           >Latest</router-link
         >
         <router-link
           :to="{ name: 'top' }"
           class="flex gap-1 md:gap-2 text-sm items-center"
+          :class="[
+            route.fullPath === '/community/top'
+              ? 'text-primary border-b border-primary'
+              : '',
+          ]"
         >
           Top
         </router-link>
         <router-link
           :to="{ name: 'new' }"
           class="flex gap-1 md:gap-2 text-sm items-center"
+          :class="[
+            route.fullPath === '/community/new'
+              ? 'text-primary border-b border-primary'
+              : '',
+          ]"
         >
           New (20)
         </router-link>
         <router-link
           :to="{ name: 'categories' }"
           class="flex gap-1 md:gap-2 text-sm items-center"
+          :class="[
+            route.fullPath === '/community/categories'
+              ? 'text-primary border-b border-primary'
+              : '',
+          ]"
         >
           Categories
         </router-link>
