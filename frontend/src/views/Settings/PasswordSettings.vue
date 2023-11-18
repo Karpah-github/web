@@ -14,7 +14,7 @@
         </span>
         <input
           class="form-field"
-          type="text"
+          type="password"
           name="old-password"
           v-model="password.oldPassword"
           required
@@ -24,7 +24,7 @@
         <label for="new-password">New Password</label>
         <input
           class="form-field"
-          type="text"
+          type="password"
           name="new-password"
           v-model="password.newPassword"
           id="new-password"

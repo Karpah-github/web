@@ -14,7 +14,7 @@ const changeUploadScreen = (view: string) => {
 <template>
   <nav>
     <ul
-      class="font-light gap-1 flex md:gap-3 flex-wrap md:flex-nowrap uppercase py-6 text-neutral"
+      class="font-light gap-1 cursor-pointer flex md:gap-3 flex-wrap md:flex-nowrap uppercase py-6 text-neutral"
     >
       <li
         class="flex gap-1 md:gap-2 md:text-xs text-sm items-center"

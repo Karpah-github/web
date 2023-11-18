@@ -37,7 +37,7 @@ const signInData = ref({
           </span>
           <input
             class="form-field"
-            type="text"
+            type="email"
             name="email"
             v-model="signInData.email"
             required
