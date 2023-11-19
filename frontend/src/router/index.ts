@@ -61,6 +61,12 @@ const routes: Array<RouteRecordRaw> = [
     meta: { layout: DefaultLayout },
   },
   {
+    path: "/teams",
+    name: "teams",
+    component: () => import("../views/Teams/index.vue"),
+    meta: { layout: DefaultLayout },
+  },
+  {
     path: "/products",
     name: "products",
     meta: { layout: DefaultLayout },
