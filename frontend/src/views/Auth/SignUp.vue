@@ -40,7 +40,7 @@ const signUpData = ref({
           </span>
           <input
             class="form-field"
-            type="text"
+            type="email"
             name="email"
             v-model="signUpData.email"
             required
@@ -76,7 +76,7 @@ const signUpData = ref({
           </span>
           <input
             class="form-field"
-            type="text"
+            type="password"
             name="password"
             v-model="signUpData.password"
             required
@@ -88,7 +88,7 @@ const signUpData = ref({
           </span>
           <input
             class="form-field"
-            type="text"
+            type="password"
             name="confirm-password"
             v-model="signUpData.confirmPassword"
             required

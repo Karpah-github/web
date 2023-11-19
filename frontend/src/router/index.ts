@@ -2,7 +2,6 @@ import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import AuthLayout from "@/layouts/AuthLayout.vue";
 import DefaultLayout from "@/layouts/DefaultLayout.vue";
-import store from "@/store";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -59,6 +58,12 @@ const routes: Array<RouteRecordRaw> = [
     path: "/overview",
     name: "overview",
     component: () => import("../views/OverviewScreen.vue"),
+    meta: { layout: DefaultLayout },
+  },
+  {
+    path: "/teams",
+    name: "teams",
+    component: () => import("../views/Teams/index.vue"),
     meta: { layout: DefaultLayout },
   },
   {

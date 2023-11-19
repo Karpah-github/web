@@ -24,7 +24,7 @@
         <label for="email">Email Address</label>
         <input
           class="form-field"
-          type="text"
+          type="email"
           name="email"
           v-model="account.email"
           id="email"

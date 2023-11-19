@@ -62,9 +62,12 @@ const showProducts = (x: string) => {
           <p class="text-neutral pb-4 text-xs md:text-sm font-light">
             Lagos, Nigeria
           </p>
-          <button class="btn-secondary px-4 py-2 text-xs md:text-sm">
+          <router-link
+            to="/settings/account"
+            class="btn-secondary px-4 py-2 text-xs md:text-sm"
+          >
             Edit profile
-          </button>
+          </router-link>
         </div>
       </div>
       <div class="md:w-5/12 pl-8 md:pl-0 pr-8">
@@ -84,7 +87,7 @@ const showProducts = (x: string) => {
             />
             <p class="font-light text-sm text-dark">Janet doe</p>
           </div>
-          <button class="text-primary">Message</button>
+          <!-- <button class="text-primary">Message</button> -->
         </div>
       </div>
     </div>
@@ -169,15 +172,19 @@ const showProducts = (x: string) => {
           kids
         </span>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-3 w-full">
-        <BuyersProductCard
-          v-for="(product, index) in products"
-          :key="index"
-          :price="product.price"
-          :name="product.name"
-          :status="product.status"
-          :upload-date="product.uploadDate"
-        />
+      <div class="min-h-[500px]">
+        <div
+          class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-3 w-full"
+        >
+          <BuyersProductCard
+            v-for="(product, index) in products"
+            :key="index"
+            :price="product.price"
+            :name="product.name"
+            :status="product.status"
+            :upload-date="product.uploadDate"
+          />
+        </div>
       </div>
     </div>
   </div>

@@ -4,7 +4,7 @@
       <aside
         class="aside flex flex-col justify-between gap-4 px-4 py-8 h-screen md:border-r border-neutral-border"
       >
-        <ul class="flex flex-col gap-4">
+        <ul class="flex flex-col gap-3">
           <div class="md:mb-6 w-full flex justify-between items-center">
             <div class="md:pl-3">
               <img
@@ -42,6 +42,7 @@
           <router-link to="/products"> Products </router-link>
           <router-link to="/messages"> Messages </router-link>
           <!-- <router-link to="/analytics"> Analytics </router-link> -->
+          <router-link to="/teams"> Teams </router-link>
           <router-link to="/settings"> Settings </router-link>
           <div class="w-full h-[1px] bg-neutral-bg"></div>
           <router-link to="/get-started">Get Started </router-link>

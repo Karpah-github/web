@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import { ref } from "vue";
+import customPasswordInput from "@/components/CustomPasswordInput.vue";
 
 const signInData = ref({
   email: "",
   password: "",
   keepSignedIn: false,
 });
+const showPassword = ref(false);
 </script>
 
 <template>
@@ -32,36 +34,30 @@ const signInData = ref({
         </p>
       </div>
       <form class="md:w-9/12 w-full my-5 mx-auto">
-        <div
+        <!-- <div
           class="form-field gap-2 cursor-pointer mb-6 justify-center flex items-center"
         >
           <img src="../../assets/icons/google-icon.svg" alt="" />
           <p>Continue with Google</p>
-        </div>
+        </div> -->
         <div class="form-input2">
           <span class="flex gap-1">
             <label for="email">Email address</label>
           </span>
           <input
             class="form-field"
-            type="text"
+            type="email"
             name="email"
             v-model="signInData.email"
             required
           />
         </div>
-        <div class="form-input2">
-          <span class="flex gap-1">
-            <label for="password">Password</label>
-          </span>
-          <input
-            class="form-field"
-            type="text"
-            name="password"
-            v-model="signInData.password"
-            required
-          />
-        </div>
+        <customPasswordInput
+          :password="signInData.password"
+          :showPassword="showPassword"
+          v-model="signInData.password"
+          @toggle-show-password="showPassword = !showPassword"
+        />
         <button class="btn-primary w-full mt-6 py-2">Log in to Karpah</button>
       </form>
       <div

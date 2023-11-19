@@ -2,6 +2,7 @@
 import { ref } from "vue";
 import CustomSelect from "@/components/Community/CustomSelect.vue";
 import AddTopic from "@/components/modals/AddTopic.vue";
+import { useRoute } from "vue-router";
 
 //show community navigation panel
 const showNav = ref(true);
@@ -9,48 +10,56 @@ const topics = ref([
   {
     id: 1,
     topic: "Welcome and Forum Guidelines",
+    slug: "welcome-and-forum-guidelines",
     replies: 98,
     date: "Jun 10",
   },
   {
     id: 2,
     topic: "Updates on the highlights feature",
+    slug: "Updates-on-the-highlights-feature",
     replies: 9,
     date: "Jun 10",
   },
   {
     id: 3,
     topic: "How to be a top seller",
+    slug: "How-to-be-a-top-seller",
     replies: 98,
     date: "Jun 10",
   },
   {
     id: 4,
     topic: "Karpah buyers algorithm",
+    slug: "Karpah-buyers-algorithm",
     replies: 198,
     date: "Jun 10",
   },
   {
     id: 5,
     topic: "Updates on the highlights feature",
+    slug: "Updates-on-the-highlights-feature",
     replies: 9,
     date: "Jun 10",
   },
   {
     id: 6,
     topic: "How to be a top seller",
+    slug: "How-to-be-a-top-seller",
     replies: 98,
     date: "Jun 10",
   },
   {
     id: 7,
     topic: "Karpah buyers algorithm",
+    slug: "Karpah-buyers-algorithm",
     replies: 198,
     date: "Jun 10",
   },
   {
     id: 8,
     topic: "Updates on the highlights feature",
+    slug: "Updates-on-the-highlights-feature",
     replies: 9,
     date: "Jun 10",
   },
@@ -59,6 +68,7 @@ const openAddTopicModal = ref(false);
 const showAddTopicModal = () => {
   openAddTopicModal.value = !openAddTopicModal.value;
 };
+const route = useRoute();
 </script>
 
 <template>
@@ -68,9 +78,12 @@ const showAddTopicModal = () => {
         <img class="" src="../../assets/Karpah.svg" alt="" />
       </div>
       <div class="flex gap-4 items-center">
-        <button class="btn-primary py-2 px-4 text-sm md:text-md">
+        <router-link
+          to="/auth/signup"
+          class="btn-primary py-2 px-4 text-sm md:text-md"
+        >
           Sign up
-        </button>
+        </router-link>
         <!-- <button class="btn-primary py-2 px-4 text-sm md:text-md">Login</button> -->
       </div>
     </div>
@@ -84,7 +97,7 @@ const showAddTopicModal = () => {
         </h6>
       </div>
       <div class="hidden md:block">
-        <img class="md:w-[250px]" src="../../assets/community.png" alt="" />
+        <img class="md:w-[270px]" src="../../assets/community.png" alt="" />
       </div>
     </div>
     <div class="px-8 py-8">
@@ -107,26 +120,45 @@ const showAddTopicModal = () => {
         }"
       >
         <router-link
-          :to="{ name: 'community' }"
+          to="/community"
           class="flex gap-1 md:gap-2 text-sm items-center"
+          :class="[
+            route.fullPath === '/community'
+              ? 'text-primary border-b border-primary'
+              : '',
+          ]"
+          >Latest</router-link
         >
-          Latest
-        </router-link>
         <router-link
           :to="{ name: 'top' }"
           class="flex gap-1 md:gap-2 text-sm items-center"
+          :class="[
+            route.fullPath === '/community/top'
+              ? 'text-primary border-b border-primary'
+              : '',
+          ]"
         >
           Top
         </router-link>
         <router-link
           :to="{ name: 'new' }"
           class="flex gap-1 md:gap-2 text-sm items-center"
+          :class="[
+            route.fullPath === '/community/new'
+              ? 'text-primary border-b border-primary'
+              : '',
+          ]"
         >
           New (20)
         </router-link>
         <router-link
           :to="{ name: 'categories' }"
           class="flex gap-1 md:gap-2 text-sm items-center"
+          :class="[
+            route.fullPath === '/community/categories'
+              ? 'text-primary border-b border-primary'
+              : '',
+          ]"
         >
           Categories
         </router-link>
@@ -153,7 +185,7 @@ const showAddTopicModal = () => {
             :key="topic.id"
           >
             <td class="table__image py-4 px-2">
-              <router-link :to="`/community/${topic.topic}`">
+              <router-link :to="`/community/${topic.slug}`">
                 <p class="text-md font-medium">{{ topic.topic }}</p>
                 <p class="text-sm font-light py-1">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -208,8 +240,8 @@ const showAddTopicModal = () => {
   font-size: 14px;
   padding: 0.5em;
 }
-.page_nav a.router-link-active {
+/* .page_nav a.router-link-active {
   border-bottom: 1px solid #cc8f56;
   color: #cc8f56;
-}
+} */
 </style>

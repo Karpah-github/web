@@ -67,6 +67,7 @@
         <label for="quantity">Quantity</label>
         <input
           class="form-field"
+          type="number"
           name="quantity"
           :value="productQuantity"
           @input="
