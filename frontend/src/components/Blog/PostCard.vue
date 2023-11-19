@@ -4,7 +4,7 @@ const props = defineProps(["title", "author", "img", "readTime"]);
 </script>
 
 <template>
-  <div class="md:w-[300px]">
+  <div class="">
     <div class="">
       <img class="w-full" src="../../assets/blog-img.png" alt="" />
     </div>
