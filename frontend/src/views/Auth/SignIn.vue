@@ -34,12 +34,12 @@ const showPassword = ref(false);
         </p>
       </div>
       <form class="md:w-9/12 w-full my-5 mx-auto">
-        <div
+        <!-- <div
           class="form-field gap-2 cursor-pointer mb-6 justify-center flex items-center"
         >
           <img src="../../assets/icons/google-icon.svg" alt="" />
           <p>Continue with Google</p>
-        </div>
+        </div> -->
         <div class="form-input2">
           <span class="flex gap-1">
             <label for="email">Email address</label>
