@@ -1,10 +1,7 @@
 from fastapi import APIRouter
-from pydantic import BaseModel
 
 
-class User(BaseModel):
-    name: str
-    is_shop_admin: bool
+
 
 
 router = APIRouter(prefix="/users")
