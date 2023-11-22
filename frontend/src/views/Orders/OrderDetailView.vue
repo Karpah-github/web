@@ -25,7 +25,7 @@ const showMoreDetails = (x: number) => {
       <ul class="gap-1 flex md:gap-2 flex-wrap md:flex-nowrap uppercase py-4">
         <li>
           <router-link
-            to="/"
+            to="/dashboard"
             class="flex gap-1 text-sm items-center font-light text-[#b3b3b3]"
           >
             <span>DASHBOARD</span>

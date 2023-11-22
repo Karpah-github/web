@@ -5,7 +5,7 @@ import DefaultLayout from "@/layouts/DefaultLayout.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: "/",
+    path: "/dashboard",
     name: "home",
     meta: { layout: DefaultLayout },
     component: HomeView,
