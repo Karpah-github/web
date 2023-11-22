@@ -71,10 +71,11 @@ const hideProduct = (x: string) => {
               required
             />
           </div>
-          <div class="flex py-5 gap-2 w-full">
-            <button class="btn-primary px-3 py-1 rounded-sm text-sm w-full">
+          <div class="flex pt-5 gap-2 w-full">
+            <button class="btn-primary px-3 py-2 rounded-sm text-sm w-full">
               Save Admin
             </button>
+
             <!-- <button class="btn-secondary px-3 py-1 w-1/2" @click="props.close">
               Cancel
             </button> -->
@@ -94,7 +95,8 @@ const hideProduct = (x: string) => {
   z-index: 3;
   position: fixed;
   width: 80%;
-  height: 420px;
+  height: 440px;
+  overflow: scroll;
   cursor: pointer;
   border-radius: 8px;
   &.show {
