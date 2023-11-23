@@ -278,8 +278,8 @@ const showMoreDetails = (x: number) => {
 }
 
 .svg-primary {
-  filter: invert(62%) sepia(56%) saturate(388%) hue-rotate(348deg)
-    brightness(88%) contrast(90%);
+  filter: invert(28%) sepia(7%) saturate(5645%) hue-rotate(338deg)
+    brightness(100%) contrast(88%);
 }
 .svg-mid-neutral {
   filter: invert(76%) sepia(0%) saturate(539%) hue-rotate(190deg)
