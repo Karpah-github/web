@@ -6,13 +6,16 @@
       >
         <ul class="flex flex-col gap-3">
           <div class="md:mb-6 w-full flex justify-between items-center">
-            <div class="md:pl-3">
+            <button
+              @click="router.push('/')"
+              class="md:pl-3 cursor-pointer hover:bg-transparent"
+            >
               <img
                 class="w-8/12 hiddden md:block"
                 src="../../../assets/Karpah.svg"
                 alt=""
               />
-            </div>
+            </button>
             <div class="" @click="closeSidebar">
               <img
                 class="w-full md:hidden"
@@ -72,7 +75,7 @@
 </template>
 
 <script setup lang="ts">
-import { useRoute } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
 import { watch } from "vue";
 
 const closeSidebar = () => {
@@ -82,6 +85,7 @@ const route = useRoute();
 watch(route, () => {
   document.querySelector<HTMLElement>("#sidebar")?.classList.remove("open");
 });
+const router = useRouter();
 </script>
 
 <style scoped lang="scss">
