@@ -1,4 +1,18 @@
 // @import '../assets/scss/mixin';
+@font-face {
+  font-family: "Neue Montreal";
+  src: url("../assets/fonts/neue-montreal-free-demo-pangram-pangram-030418/NeueMontreal-Bold.otf");
+  src: url("../assets/fonts/neue-montreal-free-demo-pangram-pangram-030418/NeueMontreal-Medium.otf"),
+    url("../assets/fonts/neue-montreal-free-demo-pangram-pangram-030418/NeueMontreal-Light.otf"),
+    url("../assets/fonts/neue-montreal-free-demo-pangram-pangram-030418/NeueMontreal-Regular.otf")
+      format("truetype");
+}
+.font-montreal {
+  font-size: "Neue Montreal";
+}
+.font-dancing {
+  font-family: "Dancing Script", cursive;
+}
 
 // Heading Tags
 h1 {
@@ -43,7 +57,7 @@ button {
 
 // Buttons
 .btn-primary {
-  background: #cc8f56;
+  background: #864622;
   border-radius: 2px;
   color: #ffffff;
   font-size: 14px;
