@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Body, Request, HTTPException, status
 from fastapi.responses import JSONResponse
 from fastapi.encoders import jsonable_encoder
-from app.models.users import UserCollection, User
+from app.api.v1.models.users import UserModel
 from bson import ObjectId
 
 
@@ -27,7 +27,7 @@ async def get_users(request: Request):
 @router.post(
     "/", response_description="Create A new Seller", status_code=status.HTTP_201_CREATED
 )
-async def create_user(request: Request, user: User = Body(...)):
+async def create_user(request: Request, user: UserModel = Body(...)):
     """
     Insert new user document to User Collection
     """
