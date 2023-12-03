@@ -12,7 +12,11 @@ const props = defineProps(["open", "close", "showNotificationModal"]);
       >
         <h3 class="font-medium tex-[#333]">Notifications</h3>
         <button @click="props.close" class="">
-          <img src="../../assets/icons/close.svg" alt="" />
+          <img
+            class="svg-mid-neutral"
+            src="../../assets/icons/close.svg"
+            alt=""
+          />
         </button>
       </div>
       <!-- <div class="flex items-center justify-center mt-20">
@@ -138,6 +142,10 @@ const props = defineProps(["open", "close", "showNotificationModal"]);
   @include md {
     width: 400px;
   }
+}
+.svg-neutral {
+  filter: invert(29%) sepia(26%) saturate(0%) hue-rotate(156deg) brightness(99%)
+    contrast(100%);
 }
 
 .modal-overlay::before {

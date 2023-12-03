@@ -1,18 +1,23 @@
 <script setup lang="ts">
+import { ref } from "vue";
 import { watch } from "vue";
 import { useRoute, useRouter } from "vue-router";
 
 const router = useRouter();
 const route = useRoute();
+const menuBar = ref(true);
 const toggleSidebar = () => {
   const sidebar = document.getElementById("nav");
+  menuBar.value = !menuBar.value;
   sidebar?.classList.add("open");
 };
 const closeSidebar = () => {
-  document.querySelector<HTMLElement>("#sidebar")?.classList.remove("open");
+  menuBar.value = !menuBar.value;
+  const sidebar = document.getElementById("nav");
+  sidebar?.classList.remove("open");
 };
 watch(route, () => {
-  document.querySelector<HTMLElement>("#sidebar")?.classList.remove("open");
+  document.getElementById("nav")?.classList.remove("open");
 });
 </script>
 
@@ -24,8 +29,21 @@ watch(route, () => {
       <div class="w-20">
         <img class="w-full" src="../assets/Karpah.svg" alt="" />
       </div>
-      <button class="p-2" @click="toggleSidebar" data-testid="navToggleTest">
+      <button
+        v-if="menuBar"
+        class="p-2"
+        @click="toggleSidebar"
+        data-testid="navToggleTest"
+      >
         <img class="w-full" src="../assets/icons/menu.svg" alt="" />
+      </button>
+      <button
+        v-else
+        class="p-2"
+        @click="closeSidebar"
+        data-testid="navToggleTest"
+      >
+        <img class="w-full" src="../assets/icons/close.svg" alt="" />
       </button>
     </div>
     <div
@@ -79,8 +97,8 @@ watch(route, () => {
   transition: all 0.5s ease;
 }
 #nav {
-  /* position: fixed;
-  top: 0;
+  position: fixed;
+  /* top: 40px;
   left: 0; */
   background-color: white;
   width: 100%;

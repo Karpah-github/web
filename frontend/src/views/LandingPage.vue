@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import FaqSection from "@/components/FaqSection.vue";
+import Footer from "@/components/Footer.vue";
 </script>
 
 <template>
@@ -124,18 +125,59 @@ import FaqSection from "@/components/FaqSection.vue";
         </div>
       </section>
     </div>
-    <section class="explore-section my-20">
+    <section class="explore-section my-16 md:my-20">
       <div class="text-center lg:w-3/4 mx-auto px-4 md:px-10 mb-10">
         <h6 class="uppercase text-sm text-[#864622]">explore karpah</h6>
-        <h2 class="pt-2 pb-10">
+        <h2 class="pt-2 pb-5 md:pb-10">
           Elevate Your Sales: Explore the World of Fashion on Karpah
         </h2>
       </div>
-      <div class="md:flex w-full">
-        <div class="style bg-primary w-1/6 relative w-full h-[500px]">
-          <div class="absolute style-img">
-            <img src="../assets/landing-page/style1.png" alt="" />
-          </div>
+      <div class="md:flex hidden w-full">
+        <div class="style bg-primary flex justify-center z-50 flex w-full">
+          <div class="style-img bg-img1"></div>
+          <p class="text-white uppercase z-40 self-end text-xl">
+            African styles
+          </p>
+        </div>
+        <div class="style bg-[#9E6B4E] flex justify-center z-40 w-full">
+          <div class="style-img bg-img2"></div>
+          <p class="text-white uppercase z-40 self-end text-xl">
+            African styles
+          </p>
+        </div>
+        <div class="style bg-[#AE836B] flex justify-center z-20 w-full">
+          <div class="style-img bg-img3"></div>
+          <p class="text-white uppercase z-40 self-end text-xl">
+            African styles
+          </p>
+        </div>
+        <div class="style bg-[#C7AA99] z-10 flex justify-center w-full">
+          <div class="style-img bg-img4"></div>
+          <p class="text-white uppercase z-40 self-end text-xl">
+            African styles
+          </p>
+        </div>
+        <div class="style bg-[#D9C6BA] z-0 flex justify-center w-full">
+          <div class="style-img bg-img5"></div>
+          <p class="text-white uppercase z-40 self-end text-xl">
+            African styles
+          </p>
+        </div>
+      </div>
+      <div class="styles md:hidden w-full">
+        <div class="styles-slide">
+          <img src="../assets/landing-page/style1.jpg" alt="style" />
+          <img src="../assets/landing-page/style3.jpg" alt="style" />
+          <img src="../assets/landing-page/style2.jpg" alt="style" />
+          <img src="../assets/landing-page/style4.jpg" alt="style" />
+          <img src="../assets/landing-page/style5.jpg" alt="style" />
+        </div>
+        <div class="styles-slide">
+          <img src="../assets/landing-page/style1.jpg" alt="style" />
+          <img src="../assets/landing-page/style3.jpg" alt="style" />
+          <img src="../assets/landing-page/style2.jpg" alt="style" />
+          <img src="../assets/landing-page/style4.jpg" alt="style" />
+          <img src="../assets/landing-page/style5.jpg" alt="style" />
         </div>
       </div>
     </section>
@@ -158,89 +200,7 @@ import FaqSection from "@/components/FaqSection.vue";
         </router-link>
       </div>
     </section>
-    <section class="bg-[#29292B] border-t py-14 border-[#D9D9D9] px-4 md:px-10">
-      <div
-        class="flex justify-between flex-wrap gap-2 text-xs md:text-sm text-white font-light"
-      >
-        <div class="">
-          <h6 class="text-xl font-">Join to our newsletter</h6>
-          <p class="text-base text-[#FFFFFFCC]">
-            Get product updates, company news, and more
-          </p>
-          <div class="my-5 flex gap-2">
-            <input
-              type="email"
-              name="email"
-              id="email"
-              class="border border-[#FFFFFF33] bg-transparent text-white w-[250px] md:w-[270px] py-2 outline-none rounded-3xl px-2"
-              placeholder="Enter your email"
-            />
-            <router-link
-              to="/auth/signup"
-              class="bg-white text-dark py-2 px-5 text-base rounded-3xl"
-            >
-              Subscribe
-            </router-link>
-          </div>
-        </div>
-        <div class="flex gap-16">
-          <ul class="flex flex-col gap-5">
-            <li class="uppercase text-sm text-[#FFFFFF80]">company</li>
-            <li class="text-[#FFFFFF80]">
-              <router-link to="/" class="text-lg text-white">
-                Blog
-              </router-link>
-            </li>
-            <li class="text-[#FFFFFF80]">
-              <router-link to="/community" class="text-lg text-white">
-                Community
-              </router-link>
-            </li>
-            <li class="text-[#FFFFFF80]">
-              <router-link to="/" class="text-lg text-white">
-                Contact
-              </router-link>
-            </li>
-          </ul>
-          <ul class="flex flex-col gap-5">
-            <li class="uppercase text-sm text-[#FFFFFF80]">folllow us</li>
-            <li class="text-[#FFFFFF80]">
-              <router-link to="/" class="text-lg text-white">
-                X - Twitter
-              </router-link>
-            </li>
-            <li class="text-[#FFFFFF80]">
-              <router-link to="/community" class="text-lg text-white">
-                Instagram
-              </router-link>
-            </li>
-            <li class="text-[#FFFFFF80]">
-              <router-link to="/" class="text-lg text-white">
-                Facebook
-              </router-link>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <section class="bg-[#29292B] border-t border-[#D9D9D9] px-4 md:px-10">
-      <div
-        class="flex justify-between flex-wrap gap-2 my-8 text-xs md:text-sm text-neutral font-light"
-      >
-        <p class="">
-          © 2023 Karpah. All rights reserved.
-        </p>
-        <div class="flex gap-2 md:gap-4">
-          <router-link to="/" class="underline">Privacy policy</router-link>
-          <router-link to="/" class="underline"
-            >Terms and Condition</router-link
-          >
-        </div>
-      </div>
-      <div class="mt-20">
-        <img src="../assets/landing-page/footer-logo.png" alt="" />
-      </div>
-    </section>
+    <Footer />
   </div>
 </template>
 
@@ -284,21 +244,24 @@ import FaqSection from "@/components/FaqSection.vue";
   h2 {
     font-size: 52px;
     line-height: 121%;
-    color: #333;
+    color: #1b1c1e;
     text-transform: capitalize;
     @include sm {
+      font-size: 28px;
+    }
+    @include md {
       font-size: 32px;
     }
   }
 }
 .ready-section {
   h2 {
-    font-size: 40px;
+    font-size: 52px;
     font-style: normal;
     font-weight: 500;
     line-height: 120%;
     @include sm {
-      font-size: 28px;
+      font-size: 32px;
       line-height: 130%;
     }
   }
@@ -307,15 +270,137 @@ input::placeholder {
   color: #fff;
 }
 .style {
-  /* position: relative; */
+  position: relative;
+  height: 550px;
+  overflow: hidden;
+}
+.bg-img1 {
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 0.2) 100%
+    ),
+    url("../assets/landing-page/style1.jpg");
+}
+.bg-img2 {
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 0.2) 100%
+    ),
+    url("../assets/landing-page/style2.jpg");
+}
+.bg-img3 {
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 0.2) 100%
+    ),
+    url("../assets/landing-page/style3.jpg");
+}
+.bg-img4 {
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 0.2) 100%
+    ),
+    url("../assets/landing-page/style4.jpg");
+}
+.bg-img5 {
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 0.2) 100%
+    ),
+    url("../assets/landing-page/style5.jpg");
 }
 .style-img {
+  width: 100%;
+  height: 100%;
   display: inline-flex;
   transform: rotate(44.855deg);
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: flex-end;
   align-items: center;
-  left: -280px;
-  top: 0%;
+  border-radius: 8px;
+  background-size: cover;
+  background-position: center;
+  background-position-x: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: -70%;
+  top: 2.5%;
+  scale: 1;
+}
+
+.style:hover .style-img {
+  border-radius: 0;
+  overflow: hidden;
+  animation-name: slideout;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+@keyframes slideout {
+  0% {
+    transform: rotate(44.85deg);
+    left: -70%;
+    top: 2.5%;
+    scale: 1;
+  }
+  100% {
+    transform: rotate(0deg);
+    left: 0%;
+    top: 0%;
+    scale: 1.1;
+  }
+}
+.style:not(:hover) .style-img {
+  animation: slideback 0.2s ease-in-out;
+}
+
+@keyframes slideback {
+  from {
+    transform: rotate(0deg);
+    left: 0%;
+    top: 0%;
+    scale: 1.1;
+  }
+  to {
+    transform: rotate(44.85deg);
+    left: -70%;
+    top: 2.5%;
+    scale: 1;
+  }
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+.styles {
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 0px 0px;
+}
+.styles:hover {
+  .styles-slide {
+    animation-play-state: paused;
+  }
+}
+.styles-slide {
+  display: inline-block;
+  animation: 15s slide infinite linear;
+  position: relative;
+  img {
+    height: 500px;
+    width: 300px;
+    display: inline;
+    max-width: 300px;
+  }
 }
 </style>
