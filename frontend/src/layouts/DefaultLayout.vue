@@ -6,7 +6,7 @@
       <button class="p-2" @click="toggleSidebar" data-testid="navToggleTest">
         <img class="w-full" src="../assets/icons/menu.svg" alt="" />
       </button>
-      <div class="w-20">
+      <div class="w-20" @click="router.push('/')">
         <img class="w-full" src="../assets/Karpah.svg" alt="" />
       </div>
       <div class="">
@@ -59,7 +59,7 @@
 <script setup lang="ts">
 import NotificationCard from "@/components/modals/NotificationCard.vue";
 import { ref } from "vue";
-// import { useRoute } from "vue-router";
+import { useRouter } from "vue-router";
 import SideBar from "../components/navigations/side/SideBar.vue";
 const toggleSidebar = () => {
   const sidebar = document.getElementById("sidebar");
@@ -69,7 +69,7 @@ const openNotificationModal = ref(false);
 const showNotificationModal = () => {
   openNotificationModal.value = !openNotificationModal.value;
 };
-// const route = useRoute();
+const router = useRouter();
 </script>
 
 <style lang="scss">

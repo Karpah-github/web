@@ -2,10 +2,17 @@ import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import AuthLayout from "@/layouts/AuthLayout.vue";
 import DefaultLayout from "@/layouts/DefaultLayout.vue";
+import landingLayout from "@/layouts/landingLayout.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
+    name: "landingPage",
+    meta: { layout: landingLayout },
+    component: () => import("../views/LandingPage.vue"),
+  },
+  {
+    path: "/dashboard",
     name: "home",
     meta: { layout: DefaultLayout },
     component: HomeView,
