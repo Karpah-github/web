@@ -9,3 +9,12 @@ Contains the api/database/CI/Deployment code for Karpah, A personal project.
 - Installation
 - Usage 
 - Troubleshooting
+
+products
+name, description, unit_price, currency, primary_image, image_urls
+
+cart
+items (list of CartItems), total_price, currency
+
+cart item
+quantity, product, price, currency
