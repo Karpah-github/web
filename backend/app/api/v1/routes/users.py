@@ -1,6 +1,5 @@
 from fastapi import APIRouter, Body, Request, HTTPException, status
 from fastapi.responses import JSONResponse
-from fastapi.encoders import jsonable_encoder
 from app.api.v1.models.users import UserModel
 from bson import ObjectId
 
@@ -22,19 +21,6 @@ async def get_users(request: Request):
         del doc["_id"]
         users.append(doc)
     return users
-
-
-@router.post(
-    "/", response_description="Create A new Seller", status_code=status.HTTP_201_CREATED
-)
-async def create_user(request: Request, user: UserModel = Body(...)):
-    """
-    Insert new user document to User Collection
-    """
-    user_encoded = jsonable_encoder(user)
-    new_user = await request.app.mongodb["users"].insert_one(user_encoded)
-    print(new_user.inserted_id, "print")
-    return JSONResponse(status_code=status.HTTP_201_CREATED, content=new_user.inserted_id)
 
 
 @router.get("/{user_id}", response_description="Get One Seller")
