@@ -56,20 +56,21 @@ const shopContent = ref<Array<any>>([
 <template>
   <div class="p-6 md:py-10 md:px-8">
     <div
-      class="flex justify-between gap-8 bg-[#FAF4EE] items-center px-6 py-8 flex-col-reverse md:flex-row"
+      class="flex flex-wrap lg:flex-nowrap justify-between gap-10 bg-[#FAF4EE] items-center px-6 py-8 flex-col-reverse md:flex-row"
     >
-      <div class="md:w-6/12">
-        <h3 class="home-heading text-dark">
+      <div class="lg:w-6/12">
+        <h3 class="home-heading text-dark mb-5">
           Unleash Your Style, Amplify Your Brand: Join Our Fashion Revolution
           Where Creativity Meets Commerce!
         </h3>
-        <button
-          class="mt-4 px-6 py-3 text-md w-full md:w-36 font-medium btn-primary"
+        <router-link
+          to="/settings/store"
+          class="px-6 py-3 text-md w-full md:w-36 font-medium btn-primary"
         >
           Start Selling
-        </button>
+        </router-link>
       </div>
-      <div class="md:w-6/12">
+      <div class="lg:w-6/12 w-full">
         <img class="w-full" src="../assets/home-img.png" alt="" />
       </div>
     </div>
@@ -78,8 +79,8 @@ const shopContent = ref<Array<any>>([
         <p class="text-sm font-medium">Latest from karpah</p>
         <!-- <button class="text-sm">Show all</button> -->
       </div>
-      <div class="flex gap-10 flex-wrap">
-        <div v-for="post in blogContent" :key="post.id">
+      <div class="md:flex gap-5">
+        <div class="md:w-[33%]" v-for="post in blogContent" :key="post.id">
           <PostCard
             :title="post.title"
             :author="post.author"
@@ -93,8 +94,8 @@ const shopContent = ref<Array<any>>([
       <div class="flex py-8 justify-between text-dark items-center">
         <p class="text-sm font-medium">Get inspired by top sellers</p>
       </div>
-      <div class="flex gap-10 flex-wrap">
-        <div v-for="shop in shopContent" :key="shop.id">
+      <div class="md:flex gap-5">
+        <div class="md:w-[33%]" v-for="shop in shopContent" :key="shop.id">
           <shopCard :name="shop.name" :brand="shop.brandName" />
         </div>
       </div>
@@ -109,7 +110,7 @@ const shopContent = ref<Array<any>>([
   font-style: normal;
   font-weight: 400;
   @include sm {
-    font-size: 18px;
+    font-size: 20px;
   }
 }
 </style>

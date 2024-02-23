@@ -4,7 +4,7 @@ const props = defineProps(["name", "brand", "img", "readTime"]);
 </script>
 
 <template>
-  <div class="md:w-[300px] border border-[#ECECEC] p-4">
+  <div class="border border-[#ECECEC] p-4">
     <div class="">
       <img class="w-full" src="../../assets/sellerAvatar.png" alt="" />
     </div>

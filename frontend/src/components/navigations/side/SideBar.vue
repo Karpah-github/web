@@ -4,15 +4,18 @@
       <aside
         class="aside flex flex-col justify-between gap-4 px-4 py-8 h-screen md:border-r border-neutral-border"
       >
-        <ul class="flex flex-col gap-4">
+        <ul class="flex flex-col gap-3">
           <div class="md:mb-6 w-full flex justify-between items-center">
-            <div class="md:pl-3">
+            <button
+              @click="router.push('/')"
+              class="md:pl-3 cursor-pointer hover:bg-transparent"
+            >
               <img
                 class="w-8/12 hiddden md:block"
                 src="../../../assets/Karpah.svg"
                 alt=""
               />
-            </div>
+            </button>
             <div class="" @click="closeSidebar">
               <img
                 class="w-full md:hidden"
@@ -36,16 +39,17 @@
               <button class="btn-secondary w-full py-2">View Shop</button>
             </div>
           </div>
-          <router-link to="/">Home </router-link>
+          <router-link to="/dashboard">Home </router-link>
           <router-link to="/overview"> Overview </router-link>
           <router-link to="/orders"> Orders </router-link>
           <router-link to="/products"> Products </router-link>
           <router-link to="/messages"> Messages </router-link>
           <!-- <router-link to="/analytics"> Analytics </router-link> -->
+          <router-link to="/teams"> Teams </router-link>
           <router-link to="/settings"> Settings </router-link>
           <div class="w-full h-[1px] bg-neutral-bg"></div>
           <router-link to="/get-started">Get Started </router-link>
-          <router-link class="text-dark text-md md:hidden" to="/"
+          <router-link class="text-dark text-md md:hidden" to="/community"
             >Community</router-link
           >
         </ul>
@@ -71,7 +75,7 @@
 </template>
 
 <script setup lang="ts">
-import { useRoute } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
 import { watch } from "vue";
 
 const closeSidebar = () => {
@@ -81,6 +85,7 @@ const route = useRoute();
 watch(route, () => {
   document.querySelector<HTMLElement>("#sidebar")?.classList.remove("open");
 });
+const router = useRouter();
 </script>
 
 <style scoped lang="scss">
